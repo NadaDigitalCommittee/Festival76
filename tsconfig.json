@@ -1,0 +1,45 @@
+// TypeScriptの設定
+{
+  "compilerOptions": {
+    "target": "ES2018",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "lib": [
+      "ESNext",
+      "ESNext.AsyncIterable",
+      "DOM"
+    ],
+    "esModuleInterop": true,
+    "allowJs": true,
+    "sourceMap": true,
+    "strict": true,
+    "noEmit": true,
+    "experimentalDecorators": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": [
+        "./*"
+      ],
+      "@/*": [
+        "./*"
+      ]
+    },
+    "types": [
+      "@nuxt/types",
+      "@nuxt/content", // Nuxt Content用拡張
+      "@nuxtjs/axios", // Axios用拡張
+      "@types/node"
+    ]
+  },
+  "vueCompilerOptions": { // Vue3(Nuxt3)に移行するときに消す。
+    "experimentalCompatMode": 2,
+    "experimentalTemplateCompilerOptions": {
+      "compatConfig": { "MODE": 2 }
+    }
+  },
+  "exclude": [
+    "node_modules",
+    ".nuxt",
+    "dist"
+  ]
+}

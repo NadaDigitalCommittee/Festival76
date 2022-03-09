@@ -1,0 +1,29 @@
+// 全体に適用する
+:root {
+  // Webフォントを使わない場合はシステムにありそうなフォントを羅列する
+  font-family: system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue","Hiragino Sans","Segoe UI","Yu Gothic UI","Meiryo UI",Roboto,"Noto Sans","Open Sans","Noto Sans CJK JP",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji",sans-serif;
+  color: $color-text;
+}
+
+// リンクの見た目を変える
+a {
+  color: $color-primary;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// 段落に余白を追加する
+p {
+  margin-bottom: 0.5rem;
+}
+
+// ページ遷移アニメーション
+.page-enter, .page-leave-to {
+  opacity: 0;
+}
+
+.page-enter-active, .page-leave-active {
+  transition: opacity .4s;
+}

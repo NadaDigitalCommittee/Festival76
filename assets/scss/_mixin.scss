@@ -1,0 +1,32 @@
+// 全てのコンポーネントで読み込まれるMixin
+@use 'sass:math';
+
+// 丸角にして影を作る
+@mixin Float($rad) {
+  border-radius: $rad;
+  // 割り算はmath.div
+  box-shadow: $rad $rad ($rad * 2) math.div($rad, -2) rgba(0, 0, 0, 0.1);
+}
+
+// ページタイトル
+@mixin Title {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+}
+
+// ボタン風デザイン
+@mixin Button {
+  @include Float(0.3rem);
+  font-size: 1.1rem;
+  line-height: 1.8rem;
+  background-color: $color-primary;
+  color: $color-white;
+  transition: all 0.5s;
+  padding: 0.25rem 0.5rem;
+
+  &:hover {
+    background-color: $color-light;
+  }
+}

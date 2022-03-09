@@ -1,0 +1,31 @@
+# パッケージを自動更新する
+version: 2
+updates:
+# Node.jsパッケージの自動更新
+- package-ecosystem: npm
+  directory: '/'
+  schedule:
+    interval: daily
+    time: '00:00'
+  # reviewers:
+  #   - octocat # プロジェクト管理者のユーザー名に変更する。(複数指定可)
+  # assignees:
+  #   - octocat # 上に同じ。
+  commit-message:
+    prefix: fix
+    prefix-development: chore
+    include: scope
+# Github Actionsの更新
+- package-ecosystem: github-actions
+  directory: '/'
+  schedule:
+    interval: daily
+    time: '00:00'
+  # reviewers:
+  #   - octocat # これも。
+  # assignees:
+  #   - octocat # もちろんこれも。
+  commit-message:
+    prefix: fix
+    prefix-development: chore
+    include: scope

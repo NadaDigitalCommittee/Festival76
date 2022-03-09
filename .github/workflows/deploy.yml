@@ -1,0 +1,43 @@
+# Pushされるごとに`gh-pages`ブランチに生成されたHTMLを配置する。
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  YARN_CACHE_FOLDER: .cache/yarn
+  DEPLOY_ENV: GH_PAGES
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Setup node env
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+          check-latest: true
+
+      - name: Cache node_modules
+        uses: actions/cache@v2.1.7
+        id: yarn-cache
+        with:
+          path: ${YARN_CACHE_FOLDER}
+          key: ${{ runner.os }}-yarn-v2
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Generate Sites
+        run: yarn generate
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
