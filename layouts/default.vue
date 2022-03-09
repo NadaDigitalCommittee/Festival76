@@ -10,7 +10,6 @@
     <footer :class="$style.footer">
       <p>© 2022 灘校デジタル委員会</p>
       <nuxt-link to="/">Top</nuxt-link>
-      <nuxt-link to="/about">About</nuxt-link>
     </footer>
   </div>
 </template>

@@ -7,7 +7,7 @@ export default {
 
   // HTMLのヘッダ
   head: {
-    title: 'ねこ',
+    title: '第76回灘校文化祭「Turn it Over🔥」',
     htmlAttrs: {
       lang: 'en',
     },
@@ -30,17 +30,14 @@ export default {
   ],
 
   // プラグイン一覧
-  plugins: [
-    // スピナーのプラグイン。ssr: falseでサーバーサイドレンダリングを無効化する
-    { src: '@/plugins/spinner', ssr: false },
-  ],
+  // plugins: [],
 
   // コンポーネントを自動インポートする
   components: true,
 
   router: {
     // Github Pages のURLでうまく動くように
-    base: process.env.DEPLOY_ENV === 'GH_PAGES' ? '/FrontendSample/' : '/',
+    base: process.env.DEPLOY_ENV === 'GH_PAGES' ? '/Festival76/' : '/',
     // 存在しないページすべてを404ページにリダイレクトする
     extendRoutes(routes, resolve) {
       routes.push({
@@ -60,18 +57,13 @@ export default {
   // 実行時に使うモジュール
   modules: [
     // Nuxt Content
-    '@nuxt/content',
-    // Axios
-    '@nuxtjs/axios',
+    // '@nuxt/content',
     // グローバルなSass変数とMixin
     '@nuxtjs/style-resources',
   ],
 
   // Nuxt Contentの設定
-  content: {},
-
-  // Axios
-  axios: {},
+  // content: {},
 
   // style-resourcesの設定
   styleResources: {

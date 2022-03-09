@@ -1,5 +1,4 @@
-# Frontend Sample
-Nuxt.jsの講義用サンプルプロジェクトです。
+# 第76回灘校文化祭「Turn it Over🔥」
 
 ## 環境セットアップ
 1. Node.jsをインストールします。(「Node.js インストール」でググりましょう。)
@@ -50,21 +49,12 @@ CSSや画像、フォントなど
 ### pages/
 それぞれのページに対応するVueコンポーネント
 
-### plugins/
-使用するプラグイン
-
 ### static/
 `robots.txt`や`favicon.ico`など生成されたページにそのまま配置するファイル
 
 ## 主な依存パッケージ
 ### `@nuxtjs/nuxt-content`
 文章やデータなどのコンテンツを管理する
-
-### `@nuxtjs/axios`
-HTTP通信に使う
-
-### `vue-simple-spinner`
-ロード中のスピナー
 
 ### `sass`, `sass-loader`
 [Sass](https://sass-lang.com)を使えるようにする

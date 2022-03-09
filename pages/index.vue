@@ -1,7 +1,6 @@
-<!-- サンプルアプリケーション -->
 <template>
   <CardContainer>
-    <CatImage />
+    <h1>準備中</h1>
   </CardContainer>
 </template>
 
