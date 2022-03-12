@@ -8,8 +8,8 @@
       </div>
     </header>
     <div :class="$style.headimg" id="headimg"></div>
-    <img :class="$style.logo" id="logo" src="/logo.svg" />
-    <img :class="$style.logotitle" id="logotitle" src="/logotitle.svg" />
+    <img :class="$style.logo" id="logo" src="@/assets/logo.svg" />
+    <img :class="$style.logotitle" id="logotitle" src="@/assets/logotitle.svg" />
     <div :class="$style.title" id="title">
       <small>第76回灘校文化祭</small>
       <br />Turn it Over
