@@ -1,7 +1,5 @@
 <template>
-  <CardContainer>
-    <h1>準備中</h1>
-  </CardContainer>
+  <div>準備中</div>
 </template>
 
 <script lang="ts">
