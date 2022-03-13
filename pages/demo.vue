@@ -1,6 +1,6 @@
 <template>
   <div :class="$style.main">
-    <header :class="$style.header">
+    <header :class="$style.header" id="header">
       <div :class="$style.hamburger">
         <span></span>
         <span></span>
@@ -9,10 +9,16 @@
     </header>
     <div :class="$style.headimg" id="headimg"></div>
     <img :class="$style.logo" id="logo" src="@/assets/logo.svg" />
-    <img :class="$style.logotitle" id="logotitle" src="@/assets/logotitle.svg" />
-    <div :class="$style.title" id="title">
-      <small>第76回灘校文化祭</small>
-      <br />Turn it Over
+    <img
+      :class="$style.logotitle"
+      v-on:click="scrollTop()"
+      id="logotitle"
+      src="@/assets/logotitle.svg"
+    />
+    <img :class="$style.title" id="title" src="@/assets/bigtitle.svg" />
+    <div :class="$style.arrow" id="arrow">
+      <span></span>
+      <span></span>
     </div>
     <p>content</p>
     <p>content</p>
@@ -60,49 +66,74 @@ export default Vue.extend({
   name: 'Index',
   mounted() {
     gsap.registerPlugin(ScrollTrigger);
+    this.animate();
+    window.addEventListener('resize', this.animate);
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.animate);
+  },
+  methods: {
+    scrollTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    },
+    animate() {
+      const height = window.innerHeight;
 
-    const width = window.innerWidth;
-    const height = window.innerHeight;
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: '#headimg',
+          start: 'top top',
+          end: 'bottom 60%',
+          scrub: true,
+        },
+      }).to('#logo', { y: -0.35 * height, scale: 1 / 4 });
 
-    gsap.to('#logo', {
-      x: -0.075 * width,
-      y: -0.25 * height,
-      scale: 1 / 4,
-      scrollTrigger: {
-        trigger: '#headimg',
-        start: 'top top',
-        end: 'bottom 10%',
-        scrub: true,
-      },
-    });
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: '#headimg',
+          start: 'top top',
+          end: 'bottom 80%',
+          scrub: true,
+        },
+      }).to('#title', { autoAlpha: 0 });
 
-    gsap.to('#title', {
-      opacity: 0,
-      scrollTrigger: {
-        trigger: '#title',
-        start: `top ${0.3 * height + 0.3 * width}px`,
-        end: `bottom ${0.3 * height + 0.3 * width}px`,
-        scrub: true,
-      },
-    });
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: '#headimg',
+          start: 'bottom 60%',
+          end: 'bottom 10%',
+          scrub: true,
+        },
+      })
+        .to('#logotitle', { autoAlpha: 1, x: 0.0375 * height })
+        .to('#logo', { x: -0.0375 * height })
+        .to('#header', { boxShadow: '0px 5px 10px black' });
 
-    gsap.to('#logotitle', {
-      opacity: 1,
-      scrollTrigger: {
-        trigger: '#logo',
-        start: 'top 10%',
-        end: 'bottom 10%',
-        scrub: true,
-      },
-    });
+      gsap.timeline({
+        scrollTrigger: {
+          toggleActions: 'play none reverse none',
+          trigger: '#headimg',
+          start: 'top top',
+          end: '10% top',
+        },
+      }).to('#arrow', { autoAlpha: 0 });
+    },
   },
 });
 </script>
 
 <style module lang="scss">
+:root {
+  background-color: #161616;
+  color: white;
+}
+
 .header {
   position: fixed;
-  background-color: black;
+  background-color: #161616;
   top: 0;
   left: 0;
   width: 100%;
@@ -130,46 +161,63 @@ export default Vue.extend({
 
 .headimg {
   position: relative;
-  background-color: black;
   top: 0;
   left: 0;
-  height: calc(40vh + 30vw + 3rem);
+  height: 100vh;
   width: 100%;
   z-index: 0;
 }
 
 .logo {
   position: fixed;
-  width: 60vw;
-  left: 20%;
-  top: calc(30% - 30vw);
-  margin-left: auto;
-  margin-right: auto;
+  height: 30%;
+  left: calc(50% - 15vh);
+  top: 25%;
   z-index: 95;
 }
 
 .logotitle {
   opacity: 0;
+  visibility: hidden;
   position: fixed;
-  height: 15vw;
-  top: calc(5vh - 7.5vw);
-  left: 50vw;
+  padding-left: 10%;
+  height: 7.5%;
+  top: 1.25%;
+  left: calc(40% - 3.75vh);
   z-index: 95;
 }
 
 .title {
   position: fixed;
-  top: calc(30% + 30vw);
-  left: 0px;
-  width: 100%;
-  color: white;
-  font-size: 2rem;
-  font-weight: bold;
-  text-align: center;
+  top: 55%;
+  height: 20%;
+  left: calc(50% - 15vh);
   z-index: 95;
 }
 
 .title small {
   font-size: 1rem;
+}
+
+.arrow {
+  padding: 1vh;
+  position: fixed;
+  top: 80%;
+  left: calc(50% - 15px);
+  height: 30px;
+  width: 30px;
+  border: 2px solid;
+  border-color: white white transparent transparent;
+  transform: rotate(135deg);
+  animation: bounce 4s infinite;
+}
+
+@keyframes bounce {
+  20% {
+    transform: translateY(15px) rotate(135deg);
+  }
+  60% {
+    transform: translateY(0px) rotate(135deg);
+  }
 }
 </style>
