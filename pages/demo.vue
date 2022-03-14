@@ -7,7 +7,7 @@
         <span></span>
       </div>
     </header>
-    <div :class="$style.headimg" id="headimg"></div>
+    <div :class="$style.headspace" id="headspace"></div>
     <img :class="$style.logo" id="logo" src="@/assets/logo.svg" />
     <img
       :class="$style.logotitle"
@@ -82,44 +82,56 @@ export default Vue.extend({
     animate() {
       const height = window.innerHeight;
 
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: '#headimg',
-          start: 'top top',
-          end: 'bottom 60%',
-          scrub: true,
-        },
-      }).to('#logo', { y: -0.35 * height, scale: 1 / 4 });
+      const firstTrigger = {
+        trigger: '#headspace',
+        start: 'top top',
+        end: 'bottom 60%',
+        scrub: true,
+      };
 
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: '#headimg',
-          start: 'top top',
-          end: 'bottom 80%',
-          scrub: true,
-        },
-      }).to('#title', { autoAlpha: 0 });
+      const secondTrigger = {
+        trigger: '#headspace',
+        start: 'bottom 60%',
+        end: 'bottom 10%',
+        scrub: true,
+      };
 
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: '#headimg',
-          start: 'bottom 60%',
-          end: 'bottom 10%',
-          scrub: true,
-        },
-      })
-        .to('#logotitle', { autoAlpha: 1, x: 0.0375 * height })
-        .to('#logo', { x: -0.0375 * height })
-        .to('#header', { boxShadow: '0px 5px 10px black' });
+      gsap.to('#logo', {
+        y: -0.35 * height,
+        scale: 1 / 4,
+        scrollTrigger: firstTrigger,
+      });
 
-      gsap.timeline({
+      gsap.to('#title', {
+        autoAlpha: 0,
+        scrollTrigger: firstTrigger,
+      });
+
+      gsap.to('#logotitle', {
+        autoAlpha: 1,
+        x: 0.0375 * height,
+        scrollTrigger: secondTrigger,
+      });
+
+      gsap.to('#logo', {
+        x: -0.0375 * height,
+        scrollTrigger: secondTrigger,
+      });
+
+      gsap.to('#header', {
+        boxShadow: '0px 5px 10px black',
+        scrollTrigger: secondTrigger,
+      });
+
+      gsap.to('#arrow', {
+        autoAlpha: 0,
         scrollTrigger: {
           toggleActions: 'play none reverse none',
-          trigger: '#headimg',
+          trigger: '#headspace',
           start: 'top top',
           end: '10% top',
         },
-      }).to('#arrow', { autoAlpha: 0 });
+      });
     },
   },
 });
@@ -159,7 +171,7 @@ export default Vue.extend({
   }
 }
 
-.headimg {
+.headspace {
   position: relative;
   top: 0;
   left: 0;
