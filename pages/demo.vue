@@ -138,14 +138,17 @@ export default Vue.extend({
 </script>
 
 <style module lang="scss">
+$white: #e9e9e9;
+$background: #161616;
+
 :root {
-  background-color: #161616;
-  color: white;
+  background-color: $background;
+  color: $white;
 }
 
 .header {
   position: fixed;
-  background-color: #161616;
+  background-color: $background;
   top: 0;
   left: 0;
   width: 100%;
@@ -166,8 +169,9 @@ export default Vue.extend({
   span {
     display: block;
     height: 2px;
+    border-radius: 1px;
     width: 6vh;
-    background-color: white;
+    background-color: $white;
   }
 }
 
@@ -219,7 +223,7 @@ export default Vue.extend({
   height: 30px;
   width: 30px;
   border: 2px solid;
-  border-color: white white transparent transparent;
+  border-color: $white $white transparent transparent;
   transform: rotate(135deg);
   animation: bounce 4s infinite;
 }
