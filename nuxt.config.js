@@ -39,13 +39,13 @@ export default {
     // Github Pages のURLでうまく動くように
     base: process.env.DEPLOY_ENV === 'GH_PAGES' ? '/Festival76/' : '/',
     // 存在しないページすべてを404ページにリダイレクトする
-    extendRoutes(routes, resolve) {
-      routes.push({
-        name: 'custom',
-        path: '*',
-        component: resolve(__dirname, 'pages/404.vue'),
-      });
-    },
+    // extendRoutes(routes, resolve) {
+    //   routes.push({
+    //     name: 'custom',
+    //     path: '*',
+    //     component: resolve(__dirname, 'pages/404.vue'),
+    //   });
+    // },
   },
 
   // ビルドに使うモジュール
