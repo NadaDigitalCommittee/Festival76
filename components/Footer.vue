@@ -25,7 +25,7 @@ export default Vue.extend({
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: end;
+  align-items: flex-end;
   height: 100%;
   width: 100%;
   padding: 2.5rem;

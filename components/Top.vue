@@ -1,8 +1,8 @@
 <template>
   <div :class="$style.parent">
     <div :class="$style.box">
-      <TopDate month="5" day="2" day-of-week="mon" :class="$style.start" />
-      <TopDate month="5" day="3" day-of-week="tue" :class="$style.end" />
+      <TopDate :month="5" :day="2" day-of-week="mon" :class="$style.start" />
+      <TopDate :month="5" :day="3" day-of-week="tue" :class="$style.end" />
       <div :class="$style.arrow" />
       <p :class="$style.title">第76回灘校文化祭</p>
       <span :class="$style.tab" />
