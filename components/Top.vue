@@ -29,7 +29,7 @@ export default Vue.extend({
 
 .box {
   position: relative;
-  max-width: 25rem;
+  max-width: 30rem;
   width: 90%;
   height: 25rem;
   background-color: $skyblue;
