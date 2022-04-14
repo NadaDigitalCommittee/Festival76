@@ -9,7 +9,7 @@ export default {
   head: {
     title: '第76回灘校文化祭「Turn it Over🔥」',
     htmlAttrs: {
-      lang: 'en',
+      lang: 'ja',
     },
     meta: [
       { charset: 'utf-8' },
