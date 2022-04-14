@@ -39,7 +39,8 @@ export default {
 
   router: {
     // Github Pages のURLでうまく動くように
-    base: process.env.DEPLOY_ENV === 'GH_PAGES' ? '/Festival76/' : '/',
+    // eslint-disable-next-line no-nested-ternary
+    base: process.env.DEPLOY_ENV === 'GH_PAGES' ? '/Festival76/' : process.env.DEPLOY_ENV === 'CF_PAGES' ? '/2022/' : '/',
     // 存在しないページすべてを404ページにリダイレクトする
     // extendRoutes(routes, resolve) {
     //   routes.push({
