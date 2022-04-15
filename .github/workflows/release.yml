@@ -1,7 +1,6 @@
 # 公開用リポジトリにpushする
 name: Release
 
-
 # 手動実行
 on: [ workflow_dispatch ]
 
@@ -13,8 +12,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout source
         uses: actions/checkout@master
+        with:
+          path: src
 
       - name: Setup node env
         uses: actions/setup-node@v3
@@ -31,12 +32,32 @@ jobs:
 
       - name: Install dependencies
         run: yarn
+        working-directory: ./src
 
-      # - name: Generate Sites
-      #   run: yarn generate
-      #
-      # - name: Deploy
-      #   uses: peaceiris/actions-gh-pages@v3
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     publish_dir: ./dist
+      - name: Generate sites
+        run: yarn generate
+        working-directory: ./src
+
+      - name: Git and SSH configurations
+          env:
+            PUBLIC_DEPLOYKEY: ${{ secrets.PUBLIC_DEPLOYKEY }}
+        run: |
+          echo "$PUBLIC_DEPLOYKEY" > ./deploykey.pem
+          chmod 600 ./deploykey.pem
+          git config --global user.email "digital@nada-sc.jp"
+          git config --global user.name "Github Actions"
+
+      - name: Push pages
+        env:
+          GIT_SSH_COMMAND: ssh -i ~/deploykey.pem -o StrictHostKeyChecking=no -F /dev/
+
+        run: |
+          git clone git@github.com:NadaDigitalCommittee/FestPublic.git
+          cd FestPublic
+          rm -r ./2022/
+          mv ../src/dist/ ./2022/
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "Deploy NadaDigitalCommittee/Festival76@$GITHUB_SHA"
+            git push origin main
+          fi
