@@ -9,7 +9,7 @@ env:
   DEPLOY_ENV: CF_PAGES
 
 jobs:
-  deploy:
+  release:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source
