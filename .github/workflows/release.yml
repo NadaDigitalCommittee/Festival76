@@ -42,8 +42,8 @@ jobs:
         env:
           PUBLIC_DEPLOYKEY: ${{ secrets.PUBLIC_DEPLOYKEY }}
         run: |
-          echo "$PUBLIC_DEPLOYKEY" > ./deploykey.pem
-          chmod 600 ./deploykey.pem
+          echo "$PUBLIC_DEPLOYKEY" > ~/deploykey.pem
+          chmod 600 ~/deploykey.pem
           git config --global user.email "digital@nada-sc.jp"
           git config --global user.name "Github Actions"
 
