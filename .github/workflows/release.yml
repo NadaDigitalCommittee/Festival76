@@ -39,8 +39,8 @@ jobs:
         working-directory: ./src
 
       - name: Git and SSH configurations
-          env:
-            PUBLIC_DEPLOYKEY: ${{ secrets.PUBLIC_DEPLOYKEY }}
+        env:
+          PUBLIC_DEPLOYKEY: ${{ secrets.PUBLIC_DEPLOYKEY }}
         run: |
           echo "$PUBLIC_DEPLOYKEY" > ./deploykey.pem
           chmod 600 ./deploykey.pem
@@ -50,7 +50,6 @@ jobs:
       - name: Push pages
         env:
           GIT_SSH_COMMAND: ssh -i ~/deploykey.pem -o StrictHostKeyChecking=no -F /dev/
-
         run: |
           git clone git@github.com:NadaDigitalCommittee/FestPublic.git
           cd FestPublic
