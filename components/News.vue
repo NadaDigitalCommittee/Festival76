@@ -1,7 +1,11 @@
 <template>
   <div :class="$style.box">
-    <p :class="$style.title">{{ title }}</p>
-    <slot :class="$style.inner" />
+    <p :class="$style.title">News</p>
+    <div :class="$style.list">
+      <p>ニュース1: ああああああ</p>
+      <p>ニュース2: いいいいいい</p>
+      <p>ニュース3: うううううう</p>
+    </div>
     <div :class="$style.more">
       <p>MORE</p>
       <span />
@@ -14,12 +18,6 @@ import Vue from 'vue';
 
 export default Vue.extend({
   name: 'Top',
-  props: {
-    title: {
-      type: String,
-      required: true,
-    },
-  },
 });
 </script>
 
@@ -36,6 +34,7 @@ export default Vue.extend({
   color: $orange;
   font-size: 2.25rem;
   font-weight: bold;
+  margin-bottom: 1rem;
 
   &::after {
     content: "";
@@ -48,8 +47,34 @@ export default Vue.extend({
   }
 }
 
-.inner {
+.list {
+  display: flex;
+  flex-direction: column;
   margin: 1rem;
+  width: calc(100% - 2rem);
+
+  p {
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 1px;
+      margin-top: 0.75rem;
+      margin-bottom: 0.75rem;
+      background-image: linear-gradient(90deg, $background, $background 5px, transparent 5px);
+      background-size: 10px 1px;
+      background-position: left bottom;
+      background-repeat: repeat-x;
+    }
+
+    &:last-child::after {
+      content: none;
+    }
+  }
 }
 
 .more {
