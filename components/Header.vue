@@ -34,7 +34,7 @@ export default Vue.extend({
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 1rem 0 4rem;
-  background-color: $red;
+  background-color: $background;
 }
 
 .hamburger {
@@ -43,20 +43,17 @@ export default Vue.extend({
 
 .sub {
   display: flex;
-  justify-content: space-between;
-  @media screen and (min-width: 800px) {
-    justify-content: space-evenly;
-  }
-  gap: 0.5rem;
+  justify-content: space-evenly;
   width: 100%;
   height: 32.5%;
 }
 
 .linkbtn {
   max-width: 15rem;
-  flex-grow: 1;
+  width: 31.5%;
+  flex-grow: 0;
   height: 100%;
-  background-color: $red;
+  background-color: $gray;
   font-size: 1rem;
   display: flex;
   flex-direction: column;

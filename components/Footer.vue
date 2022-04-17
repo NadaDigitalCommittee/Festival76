@@ -3,7 +3,7 @@
     <div :class="$style.main">
       <p :class="$style.follow">Follow us!!</p>
       <img :class="$style.btn" src="~/assets/img/youtube.svg" />
-      <img :class="$style.btn" src="~/assets/img/instagram.svg" />
+      <img :class="$style.btn" src="~/assets/img/instagram.png" />
       <img :class="$style.btn" src="~/assets/img/line.svg" />
       <img :class="$style.btn" src="~/assets/img/twitter.svg" />
     </div>
@@ -21,14 +21,13 @@ export default Vue.extend({
 
 <style module lang="scss">
 .parent {
-  background-color: $red;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
   height: 100%;
   width: 100%;
-  padding: 2.5rem;
+  padding: 5rem 8% 2.5rem;
   padding-top: 5rem;
 }
 

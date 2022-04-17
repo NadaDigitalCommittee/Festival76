@@ -2,7 +2,6 @@
   <div :class="$style.main">
     <Top :class="$style.top" />
     <div :class="$style.cards">
-      <Card title="Topics" :class="$style.card" />
       <Card title="News" :class="$style.card" />
     </div>
   </div>

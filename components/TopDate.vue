@@ -33,7 +33,7 @@ export default Vue.extend({
 .box {
   display: flex;
   align-items: baseline;
-  color: $navy;
+  color: $white;
 }
 
 .digit {
@@ -54,7 +54,7 @@ export default Vue.extend({
   height: 0.4rem;
   margin-left: 0.3rem;
   margin-right: 0.45rem;
-  background-color: $navy;
+  background-color: $white;
   border-radius: 0.2rem;
 }
 </style>
