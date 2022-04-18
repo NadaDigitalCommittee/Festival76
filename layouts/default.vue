@@ -33,7 +33,7 @@ export default Vue.extend({
 
 .header_space {
   flex-grow: 0;
-  height: 8rem;
+  height: 5rem;
 }
 
 .body {
