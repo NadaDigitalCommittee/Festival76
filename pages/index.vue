@@ -25,7 +25,7 @@ export default Vue.extend({
 
 .top {
   width: 90%;
-  margin-top: 2rem;
+  margin-top: 1.25rem;
   max-width: 25rem;
 }
 

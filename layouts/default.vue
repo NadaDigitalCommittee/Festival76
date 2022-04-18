@@ -1,9 +1,13 @@
 <template>
-  <div :class="$style.main">
-    <Header :class="$style.header" />
-    <div :class="$style.header_space"></div>
-    <Nuxt :class="$style.body" />
-    <Footer :class="$style.footer" />
+  <div>
+    <div :class="$style.parent">
+      <Header :class="$style.header" @toggle="toggle()" />
+      <div :class="[$style.main, {slidein: expanded === 1, slideout: expanded === 0}]">
+      <Header2 :class="$style.header2" />
+      <Nuxt :class="$style.body" />
+      <Footer :class="$style.footer" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -12,32 +16,76 @@ import Vue from 'vue';
 
 export default Vue.extend({
   name: 'DefaultLayout',
+  data() {
+    return {
+      expanded: 2,
+    };
+  },
+  methods: {
+    toggle() {
+      if (this.expanded === 2 || this.expanded === 1) {
+        this.expanded = 0;
+      } else if (this.expanded === 0) {
+        this.expanded = 1;
+      }
+    },
+  },
 });
 </script>
 
+<style>
+.slidein {
+  animation-name: slideIn;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+}
+
+.slideout {
+  animation-name: slideOut;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    margin-top: -4rem;
+  }
+
+  100% {
+    margin-top: 0;
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    margin-top: 0;
+  }
+
+  100% {
+    margin-top: -4rem;
+  }
+}
+</style>
+
 <style module lang="scss">
-.main {
-  min-height: 100vh;
+.parent {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 8rem;
+  height: 5rem;
   z-index: 90;
 }
 
-.header_space {
-  flex-grow: 0;
-  height: 5rem;
+.main {
+  z-index: 50;
 }
 
-.body {
-  margin-bottom: 3rem;
+.header2 {
+  height: 4rem;
 }
 
 .footer {
