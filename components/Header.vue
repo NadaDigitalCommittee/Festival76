@@ -1,11 +1,9 @@
 <template>
   <header>
     <div :class="$style.main">
-      <div />
       <nuxt-link to="/">
-        <img src="@/assets/img/logo.svg" :class="$style.logo" />
+        <img src="@/assets/img/logo.svg" :class="$style.logo" @click="scroll()" />
       </nuxt-link>
-      <HamburgerButton :class="$style.hamburger" @click.native="$emit('toggle')" />
     </div>
   </header>
 </template>
@@ -15,6 +13,17 @@ import Vue from 'vue';
 
 export default Vue.extend({
   name: 'Header',
+  methods: {
+    scroll() {
+      if (this.$route.path === '/') {
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: 'smooth',
+        });
+      }
+    },
+  },
 });
 </script>
 
@@ -23,12 +32,7 @@ export default Vue.extend({
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0.5rem 1rem 0 4rem;
+  justify-content: space-around;
   background-color: $background;
-}
-
-.hamburger {
-  height: 80%;
 }
 </style>
