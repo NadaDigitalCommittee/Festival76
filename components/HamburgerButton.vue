@@ -101,13 +101,13 @@ export default Vue.extend({
     transform: translateY(0) rotate(0deg);
   }
   100% {
-    transform: translateY(-1rem) rotate(-45deg);
+    transform: translateY(-1rem) rotate(135deg);
   }
 }
 
 @keyframes botOut {
   0% {
-    transform: translateY(-1rem) rotate(-45deg);
+    transform: translateY(-1rem) rotate(135deg);
   }
   100% {
     transform: translateY(0rem) rotate(0deg);

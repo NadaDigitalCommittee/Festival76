@@ -7,7 +7,7 @@ export default {
 
   // HTMLのヘッダ
   head: {
-    title: '第76回灘校文化祭「Turn it Over🔥」',
+    titleTemplate: '%s | 第76回灘校文化祭「Turn it Over🔥」',
     htmlAttrs: {
       lang: 'ja',
     },

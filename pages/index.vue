@@ -10,6 +10,11 @@ import Vue from 'vue';
 
 export default Vue.extend({
   name: 'Index',
+  head() {
+    return {
+      title: 'トップページ',
+    };
+  },
 });
 </script>
 
