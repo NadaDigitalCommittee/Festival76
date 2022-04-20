@@ -2,14 +2,12 @@
   <div :class="$style.box">
     <p :class="$style.title">News</p>
     <div :class="$style.list">
-      <p>ああああああ</p>
-      <p>いいいいいい</p>
-      <p>うううううう</p>
+      <p v-for="(item, index) in news" :key=index>{{ item }}</p>
     </div>
-    <div :class="$style.more">
+    <nuxt-link to="/news" v-show="limited" :class="$style.more">
       <p>MORE</p>
       <span />
-    </div>
+    </nuxt-link>
   </div>
 </template>
 
@@ -18,6 +16,41 @@ import Vue from 'vue';
 
 export default Vue.extend({
   name: 'Top',
+  props: {
+    limited: {
+      type: Boolean,
+      default: true,
+    },
+  },
+  data() {
+    return {
+      news: ['loading'],
+    };
+  },
+  /* async asyncData({ $content }) {                                  */
+  /*   const content = await $content('news')                         */
+  /*     .fetch<{ news: [{ date: string, description: string }] }>(); */
+  /*   window.console.log(content);                                   */
+  /*   if (!content || Array.isArray(content)) {                      */
+  /*     return { news: [] };                                         */
+  /*   }                                                              */
+
+  /*   return {                                                       */
+  /*     news: content.news,                                          */
+  /*   };                                                             */
+  /* },                                                               */
+  async fetch() {
+    const content = await this.$content('news').only(['news']).fetch();
+
+    if (!content || Array.isArray(content)) {
+      return;
+    }
+    if (this.limited) {
+      this.news = content.news.slice(0, 3);
+    } else {
+      this.news = content.news;
+    }
+  },
 });
 </script>
 

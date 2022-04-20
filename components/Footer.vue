@@ -29,6 +29,7 @@ export default Vue.extend({
   width: 100%;
   padding: 5rem 8% 2.5rem;
   padding-top: 5rem;
+  background-color: $background;
 }
 
 .main {

@@ -1,9 +1,9 @@
 <template>
   <div>
     <div :class="$style.sub">
-      <div :class="$style.linkbtn">サークル</div>
-      <div :class="$style.linkbtn">ステージ</div>
-      <div :class="$style.linkbtn">ブログ</div>
+      <nuxt-link to="/club" :class="$style.linkbtn">サークル</nuxt-link>
+      <nuxt-link to="/stage" :class="$style.linkbtn">ステージ</nuxt-link>
+      <nuxt-link to="/blog" :class="$style.linkbtn">ブログ</nuxt-link>
     </div>
   </div>
 </template>

@@ -60,13 +60,13 @@ export default {
   // 実行時に使うモジュール
   modules: [
     // Nuxt Content
-    // '@nuxt/content',
+    '@nuxt/content',
     // グローバルなSass変数とMixin
     '@nuxtjs/style-resources',
   ],
 
   // Nuxt Contentの設定
-  // content: {},
+  content: {},
 
   // style-resourcesの設定
   styleResources: {

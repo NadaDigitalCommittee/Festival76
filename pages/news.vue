@@ -1,7 +1,6 @@
 <template>
   <div :class="$style.main">
-    <img :class="$style.top" src="~/assets/img/top.svg">
-    <News :limited="true" :class="$style.card" />
+    <News :limited="false" :class="$style.card" />
   </div>
 </template>
 
@@ -9,10 +8,10 @@
 import Vue from 'vue';
 
 export default Vue.extend({
-  name: 'Index',
+  name: 'NewsPage',
   head() {
     return {
-      title: 'トップページ',
+      title: 'ニュース',
     };
   },
 });
@@ -28,14 +27,9 @@ export default Vue.extend({
   width: 100%;
 }
 
-.top {
-  width: 90%;
-  max-width: 25rem;
-}
-
 .card {
   width: 90%;
   max-width: 25rem;
-  min-height: 14.75rem;
+  min-height: 32rem;
 }
 </style>

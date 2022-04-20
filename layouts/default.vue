@@ -1,14 +1,13 @@
 <template>
-  <div>
-    <div :class="$style.parent">
-      <Header :class="$style.header" />
-      <HamburgerButton :class="$style.hamburger" @on="on()" @off="off()"/>
-      <SideBar :class="[$style.sidebar, {expand: expanded === 1, fold: expanded === 0}]" />
-      <div :class="$style.main">
-        <Header2 :class="$style.header2" />
-        <Nuxt :class="$style.body" />
-        <Footer :class="$style.footer" />
-      </div>
+  <div :class="$style.parent">
+    <Background :class="$style.background" />
+    <Header :class="$style.header" />
+    <HamburgerButton :class="$style.hamburger" @on="on()" @off="off()"/>
+    <SideBar :class="[$style.sidebar, {expand: expanded === 1, fold: expanded === 0}]" />
+    <div :class="$style.main">
+      <Header2 :class="$style.header2" />
+      <Nuxt :class="$style.body" />
+      <Footer :class="$style.footer" />
     </div>
   </div>
 </template>
@@ -70,10 +69,26 @@ export default Vue.extend({
 
 <style module lang="scss">
 .parent {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  margin-top: 5rem;
+  position: relative;
+}
+
+.background {
+  max-width: calc(25rem / 0.9);
+  position: absolute;
+  z-index: -1;
+  top: 36rem;
+  left: calc((100vw - min(100vw, 25rem / 0.9)) / 2);
+  width: 100%;
+  height: calc(min(100vw, 25rem / 0.9) * 1.75);
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5rem;
+  z-index: 90;
 }
 
 .sidebar {
@@ -94,21 +109,20 @@ export default Vue.extend({
   z-index: 99;
 }
 
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 5rem;
-  z-index: 90;
-}
-
 .main {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(max(100vh - 5rem, 50rem + (min(100vw, 25rem / 0.9) * 1.75)));
+  margin-top: 5rem;
   z-index: 50;
 }
 
 .header2 {
   height: 4rem;
+}
+
+.body {
+  margin-top: 1.25rem;
 }
 
 .footer {

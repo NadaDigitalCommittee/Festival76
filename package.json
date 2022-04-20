@@ -9,6 +9,7 @@
     "lintfix": "eslint --fix --ext .js,.ts,.vue --ignore-path .gitignore ."
   },
   "dependencies": {
+    "@nuxt/content": "^1.15.1",
     "@nuxtjs/style-resources": "^1.2.1",
     "core-js": "^3.21.1",
     "destyle.css": "^3.0.2",
