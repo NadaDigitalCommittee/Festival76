@@ -32,63 +32,63 @@ export default Vue.extend({
 .pat1 {
   position: absolute;
   top: 0%;
-  left: 47.5%;
-  width: 82.8px;
+  right: 30%;
+  width: 5.25rem;
 }
 
 .pat2 {
   position: absolute;
   top: 20%;
   left: 2.5%;
-  width: 82.8px;
+  width: 5.25rem;
 }
 
 .pat3 {
   position: absolute;
   top: 22.5%;
-  left: 67.5%;
-  width: 91.03px;
+  right: 7.5%;
+  width: 5.75rem;
 }
 
 .pat4 {
   position: absolute;
   top: 40%;
-  left: 42.5%;
-  width: 86.95px;
+  right: 32.5%;
+  width: 5.5rem;
 }
 
 .pat5 {
   position: absolute;
   top: 50%;
   left: 2.5%;
-  width: 76.74px;
+  width: 4.75rem;
 }
 
 .pat6 {
   position: absolute;
   top: 66.5%;
-  left: 75%;
-  width: 91.11px;
+  right: 1.25%;
+  width: 5.75rem;
 }
 
 .pat7 {
   position: absolute;
   top: 67.5%;
   left: 32.5%;
-  width: 82.8px;
+  width: 5.25rem;
 }
 
 .pat8 {
   position: absolute;
   top: 86.5%;
-  left: 70%;
-  width: 76.74px;
+  right: 7.5%;
+  width: 4.75rem;
 }
 
 .pat9 {
   position: absolute;
   top: 87.5%;
   left: 17.5%;
-  width: 56.53px;
+  width: 3.5rem;
 }
 </style>

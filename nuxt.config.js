@@ -18,7 +18,7 @@ export default {
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [
-      { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' },
+      { rel: 'icon', type: 'image/svg+xml', href: '/favicon.png' },
       // Adobe Fonts (解約時に無効化されるので必要に応じて引き継ぐ)
       { rel: 'stylesheet', href: 'https://use.typekit.net/xlj6jqy.css' },
     ],
