@@ -102,8 +102,8 @@ export default Vue.extend({
 
 .hamburger {
   position: fixed;
-  top: 0.5rem;
-  right: 0.5rem;
+  top: 0.75rem;
+  right: 1rem;
   width: 4rem;
   height: 4rem;
   z-index: 99;

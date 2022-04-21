@@ -1,8 +1,8 @@
 <template>
   <header>
     <div :class="$style.main">
-      <nuxt-link to="/">
-        <img src="@/assets/img/logo.svg" :class="$style.logo" @click="scroll()" />
+      <nuxt-link :class="$style.logo" to="/">
+        <img src="@/assets/img/logo.svg" @click="scroll()" />
       </nuxt-link>
     </div>
   </header>
@@ -34,5 +34,15 @@ export default Vue.extend({
   align-items: center;
   justify-content: space-around;
   background-color: $background;
+  padding-top: 1.25rem;
+  padding-bottom: 0.75rem;
+}
+
+.logo {
+  height: 100%;
+
+  img {
+    height: 100%;
+  }
 }
 </style>
