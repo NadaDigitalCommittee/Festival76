@@ -2,8 +2,11 @@
   <div :class="$style.parent">
     <Background :class="$style.background" />
     <Header :class="$style.header" />
-    <HamburgerButton :class="$style.hamburger" @on="on()" @off="off()"/>
-    <SideBar :class="[$style.sidebar, {expand: expanded === 1, fold: expanded === 0}]" />
+    <HamburgerButton :class="$style.hamburger" @click.native="toggle()" :expanded="expanded"/>
+    <SideBar
+      @moved="toggle()"
+      :class="[$style.sidebar, {expand: expanded === 1, fold: expanded === 0}]"
+    />
     <div :class="$style.main">
       <Header2 :class="$style.header2" />
       <Nuxt :class="$style.body" />
@@ -57,11 +60,12 @@ export default Vue.extend({
     };
   },
   methods: {
-    on() {
-      this.expanded = 1;
-    },
-    off() {
-      this.expanded = 0;
+    toggle() {
+      if (this.expanded === 1) {
+        this.expanded = 0;
+      } else {
+        this.expanded = 1;
+      }
     },
   },
 });

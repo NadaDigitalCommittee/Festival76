@@ -1,5 +1,5 @@
 <template>
-  <div :class="$style.main" @click="toggle()">
+  <div :class="$style.main">
     <span :class="{topin: expanded === 1, topout: expanded === 0}" />
     <span :class="{midin: expanded === 1, midout: expanded === 0}" />
     <span :class="{botin: expanded === 1, botout: expanded === 0}"/>
@@ -11,20 +11,10 @@ import Vue from 'vue';
 
 export default Vue.extend({
   name: 'HamburgerButton',
-  data() {
-    return {
-      expanded: -1,
-    };
-  },
-  methods: {
-    toggle() {
-      if (this.expanded === 1) {
-        this.$emit('off');
-        this.expanded = 0;
-      } else {
-        this.$emit('on');
-        this.expanded = 1;
-      }
+  props: {
+    expanded: {
+      type: Number,
+      default: -1,
     },
   },
 });

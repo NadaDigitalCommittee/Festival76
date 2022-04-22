@@ -1,7 +1,7 @@
 <template>
   <div :class="$style.main">
     <Background2 :class="$style.background" />
-    <News :limited="false" :class="$style.card" />
+    <Title :class="$style.title">ブログ</Title>
   </div>
 </template>
 
@@ -9,10 +9,10 @@
 import Vue from 'vue';
 
 export default Vue.extend({
-  name: 'NewsPage',
+  name: 'BlogPage',
   head() {
     return {
-      title: 'ニュース',
+      title: 'ブログ',
     };
   },
 });
@@ -22,9 +22,10 @@ export default Vue.extend({
 .main {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 4rem;
-  width: 100%;
+  align-items: flex-end;
+  gap: 1rem;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .background {
@@ -37,9 +38,8 @@ export default Vue.extend({
   height: calc(min(100vw, 25rem / 0.9) * 0.75);
 }
 
-.card {
-  width: 90%;
-  max-width: 25rem;
-  min-height: 32rem;
+.title {
+  width: 100%;
+  margin-bottom: 1rem;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div :class="$style.main">
+    <div @click="$emit('moved')" :class="$style.main">
       <div :class="$style.bar" />
       <nuxt-link to="/" :class="$style.btn">トップページ</nuxt-link>
       <div :class="$style.bar" />
