@@ -59,11 +59,12 @@ export default Vue.extend({
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  gap: 15%;
   margin-bottom: 0.75rem;
 }
 
 .article {
-  width: 35%;
+  flex-grow: 1;
 }
 
 .video {

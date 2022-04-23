@@ -2,7 +2,7 @@
   <div>
     <p :class="$style.caption">動画</p>
     <a target="_blank" rel="noopener noreferrer" :href="`https://youtube.com/watch?v=${videoId}`">
-      <img :class="$style.body" :src="`https://img.youtube.com/vi/${videoId}/mqdefault.jpg`">
+      <img :class="$style.body" :src="`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`">
     </a>
   </div>
 </template>
