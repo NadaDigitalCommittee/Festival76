@@ -3,7 +3,7 @@
     <Background2 :class="$style.background" />
     <Title :class="$style.title">クラブ・サークル</Title>
     <Accordion title="アニメ研究会" :class="$style.item">
-      Sample
+      <DisplayPdf path="/data/sample.pdf" :class="$style.article" />
     </Accordion>
     <Accordion title="アマチュア無線研究部" :class="$style.item" />
   </div>
@@ -50,5 +50,9 @@ export default Vue.extend({
 
 .item {
   width: 95%;
+}
+
+.article {
+  width: 35%;
 }
 </style>

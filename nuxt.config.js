@@ -34,6 +34,7 @@ export default {
   // プラグイン一覧
   plugins: [
     { src: '@/plugins/slide-up-down', ssr: false },
+    { src: '@/plugins/pdf', ssr: false },
   ],
 
   // コンポーネントを自動インポートする
@@ -79,7 +80,5 @@ export default {
   },
 
   // ビルド設定
-  build: {
-    transpile: ['gsap'],
-  },
+  // build: {},
 };
