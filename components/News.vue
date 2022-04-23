@@ -4,7 +4,7 @@
     <div :class="$style.list">
       <p v-for="(item, index) in news" :key=index>{{ item }}</p>
     </div>
-    <nuxt-link to="/news" v-show="limited" :class="$style.more">
+    <nuxt-link to="/news" v-if="limited" :class="$style.more">
       <p>MORE</p>
       <span />
     </nuxt-link>
@@ -24,21 +24,9 @@ export default Vue.extend({
   },
   data() {
     return {
-      news: ['loading'],
+      news: ['Loading...'],
     };
   },
-  /* async asyncData({ $content }) {                                  */
-  /*   const content = await $content('news')                         */
-  /*     .fetch<{ news: [{ date: string, description: string }] }>(); */
-  /*   window.console.log(content);                                   */
-  /*   if (!content || Array.isArray(content)) {                      */
-  /*     return { news: [] };                                         */
-  /*   }                                                              */
-
-  /*   return {                                                       */
-  /*     news: content.news,                                          */
-  /*   };                                                             */
-  /* },                                                               */
   async fetch() {
     const content = await this.$content('news').only(['news']).fetch();
 

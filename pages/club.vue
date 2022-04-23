@@ -2,13 +2,12 @@
   <div :class="$style.main">
     <Background2 :class="$style.background" />
     <Title :class="$style.title">クラブ・サークル</Title>
-    <Accordion title="アニメ研究会" :class="$style.item">
-      <div :class="$style.content">
-        <DisplayPdf path="data/sample.pdf" :class="$style.article" />
-        <YouTube video-id="d1YRs4dzfjs" :class="$style.video" />
+    <Accordion v-for="(club, index) in clubs" :key="index" :title="club.name" :class="$style.item">
+      <div v-if="club.article || club.videoId" :class="$style.content">
+        <DisplayPdf v-if="club.article" :path="club.article" :class="$style.article" />
+        <YouTube v-if="club.videoId" :video-id="club.videoId" :class="$style.video" />
       </div>
     </Accordion>
-    <Accordion title="アマチュア無線研究部" :class="$style.item" />
   </div>
 </template>
 
@@ -21,6 +20,20 @@ export default Vue.extend({
     return {
       title: 'クラブ・サークル',
     };
+  },
+  data() {
+    return {
+      clubs: [{ name: 'Loading...' }],
+    };
+  },
+  async fetch() {
+    const content = await this.$content('clubs').only(['clubs']).fetch();
+
+    if (!content || Array.isArray(content)) {
+      return;
+    }
+
+    this.clubs = content.clubs;
   },
 });
 </script>

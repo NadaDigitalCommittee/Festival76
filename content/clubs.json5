@@ -1,0 +1,12 @@
+{
+  clubs: [
+    {
+      name: "アニメ研究会",
+      videoId: "d1YRs4dzfjs",
+      article: "data/sample.pdf",
+    },
+    {
+      name: "アマチュア無線研究部",
+    },
+  ],
+}

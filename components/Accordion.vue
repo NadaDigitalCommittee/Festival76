@@ -2,12 +2,15 @@
   <div :class="$style.main">
     <div @click="toggle()" :class="$style.head">
       <div :class="$style.catch">
-        <div :class="[$style.mark, {close: opened === 0, open: opened === 1}]" />
+        <div
+          v-show="$slots.default"
+          :class="[$style.mark, {close: opened === 0, open: opened === 1}]"
+        />
         <h2 :class="$style.title">{{ title }}</h2>
       </div>
-      <div v-show="date && desc" :class="$style.info">
-        <p v-show="date" :class="$style.date">{{ date }}</p>
-        <p v-show="desc" :class="$style.desc">{{ desc }}</p>
+      <div v-if="date || desc" :class="$style.info">
+        <p v-if="date" :class="$style.date">{{ date }}</p>
+        <p v-if="desc" :class="$style.desc">{{ desc }}</p>
       </div>
     </div>
     <client-only>
@@ -44,6 +47,9 @@ export default Vue.extend({
   },
   methods: {
     toggle() {
+      if (!this.$slots.default) {
+        return;
+      }
       if (this.opened === 1) {
         this.opened = 0;
       } else {
@@ -146,6 +152,6 @@ export default Vue.extend({
 }
 
 .box {
-  padding: 0.75rem 2rem 0.75rem 3rem;
+  margin: 0.75rem 2rem 0.75rem 3rem;
 }
 </style>
