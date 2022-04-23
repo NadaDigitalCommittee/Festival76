@@ -4,10 +4,7 @@
     <div :class="$style.list">
       <p v-for="(item, index) in news" :key=index>{{ item }}</p>
     </div>
-    <nuxt-link to="/news" v-if="limited" :class="$style.more">
-      <p>MORE</p>
-      <span />
-    </nuxt-link>
+    <More v-if="limited" link="/news" />
   </div>
 </template>
 
@@ -15,7 +12,7 @@
 import Vue from 'vue';
 
 export default Vue.extend({
-  name: 'Top',
+  name: 'News',
   props: {
     limited: {
       type: Boolean,
@@ -96,27 +93,6 @@ export default Vue.extend({
     &:last-child::after {
       content: none;
     }
-  }
-}
-
-.more {
-  display: flex;
-  margin: auto 0 0.25rem 0;
-  align-self: end;
-  align-items: center;
-  gap: 0.25rem;
-
-  p {
-    font-family: futura-pt, sans-serif;
-    color: $gradient-orange;
-  }
-
-  span {
-    width: 1rem;
-    height: 3.5px;
-    border-bottom: 0.5px solid $gradient-orange;
-    border-right: 0.5px solid $gradient-orange;
-    transform: skew(45deg) translateY(-1.75px);
   }
 }
 </style>

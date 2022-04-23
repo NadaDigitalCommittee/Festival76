@@ -2,6 +2,15 @@
   <div :class="$style.main">
     <Background2 :class="$style.background" />
     <Title :class="$style.title">ステージ</Title>
+    <Accordion
+      v-for="(stage, index) in stages" :key="index" :title="stage.name" :class="$style.item"
+    >
+      <div :class="$style.content">
+        <YouTube v-if="stage.videoId" :video-id="stage.videoId" :class="$style.video" />
+        <p :class="$style.desc">{{ stage.description }}</p>
+        <More v-if="stage.detail" :class="$style.more" :link="stage.detail" />
+      </div>
+    </Accordion>
   </div>
 </template>
 
@@ -14,6 +23,20 @@ export default Vue.extend({
     return {
       title: 'ステージ',
     };
+  },
+  data() {
+    return {
+      stages: [{ name: 'Loading...', description: 'Loading...' }],
+    };
+  },
+  async fetch() {
+    const content = await this.$content('stages').only(['stages']).fetch();
+
+    if (!content || Array.isArray(content)) {
+      return;
+    }
+
+    this.stages = content.stages;
   },
 });
 </script>
@@ -42,5 +65,28 @@ export default Vue.extend({
 .title {
   width: 100%;
   margin-bottom: 1rem;
+}
+
+.item {
+  width: 95%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.video {
+  width: 50%;
+}
+
+.desc {
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.more {
+  align-self: flex-end;
 }
 </style>

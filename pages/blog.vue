@@ -2,6 +2,16 @@
   <div :class="$style.main">
     <Background2 :class="$style.background" />
     <Title :class="$style.title">ブログ</Title>
+    <Accordion
+      :class="$style.item"
+      v-for="(entry, index) in entries"
+      :key="index"
+      :title="entry.title"
+      :date="entry.date"
+      :desc="entry.author"
+    >
+      <nuxt-content :class="$style.content" :document="entry" />
+    </Accordion>
   </div>
 </template>
 
@@ -14,6 +24,14 @@ export default Vue.extend({
     return {
       title: 'ブログ',
     };
+  },
+  data() {
+    return {
+      entries: [],
+    };
+  },
+  async fetch() {
+    this.entries = await this.$content('blog', { deep: true }).fetch();
   },
 });
 </script>
@@ -42,5 +60,16 @@ export default Vue.extend({
 .title {
   width: 100%;
   margin-bottom: 1rem;
+}
+
+.item {
+  width: 95%;
+}
+
+.content {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  margin-left: -0.5rem;
+  font-size: 0.75rem;
 }
 </style>
