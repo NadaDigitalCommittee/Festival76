@@ -1,3 +1,10 @@
+let basedir = '/';
+if (process.env.DEPLOY_ENV === 'GH_PAGES') {
+  basedir = '/Festival76/';
+} else if (process.env.DEPLOY_ENV === 'CF_PAGES') {
+  basedir = '/2022/';
+}
+
 export default {
   // 静的サイトとして生成する
   target: 'static',
@@ -18,7 +25,7 @@ export default {
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [
-      { rel: 'icon', type: 'image/svg+xml', href: '/favicon.png' },
+      { rel: 'icon', type: 'image/svg+xml', href: `${basedir}favicon.png` },
       // Adobe Fonts (解約時に無効化されるので必要に応じて引き継ぐ)
       { rel: 'stylesheet', href: 'https://use.typekit.net/xlj6jqy.css' },
     ],
@@ -42,8 +49,7 @@ export default {
 
   router: {
     // Github Pages のURLでうまく動くように
-    // eslint-disable-next-line no-nested-ternary
-    base: process.env.DEPLOY_ENV === 'GH_PAGES' ? '/Festival76/' : process.env.DEPLOY_ENV === 'CF_PAGES' ? '/2022/' : '/',
+    base: basedir,
     // 存在しないページすべてを404ページにリダイレクトする
     // extendRoutes(routes, resolve) {
     //   routes.push({
