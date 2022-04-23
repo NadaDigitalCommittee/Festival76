@@ -1,27 +1,14 @@
 <template>
-  <header>
-    <div :class="$style.main">
-      <h1><slot/></h1>
-    </div>
-  </header>
+  <div :class="$style.main">
+    <h1><slot/></h1>
+  </div>
 </template>
 
 <script lang='ts'>
 import Vue from 'vue';
 
 export default Vue.extend({
-  name: 'Header',
-  methods: {
-    scroll() {
-      if (this.$route.path === '/') {
-        window.scrollTo({
-          top: 0,
-          left: 0,
-          behavior: 'smooth',
-        });
-      }
-    },
-  },
+  name: 'Title',
 });
 </script>
 
@@ -46,14 +33,6 @@ export default Vue.extend({
       width: 4px;
       background-color: $orange;
     }
-  }
-}
-
-.logo {
-  height: 100%;
-
-  img {
-    height: 100%;
   }
 }
 </style>

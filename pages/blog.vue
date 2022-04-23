@@ -26,6 +26,7 @@ export default Vue.extend({
   gap: 1rem;
   max-width: calc(25rem / 0.9);
   margin-left: calc((100% - min(90%, 25rem / 0.9)) / 2);
+  margin-right: calc((100% - min(90%, 25rem / 0.9)) / 2);
 }
 
 .background {

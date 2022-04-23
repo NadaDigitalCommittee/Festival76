@@ -2,6 +2,10 @@
   <div :class="$style.main">
     <Background2 :class="$style.background" />
     <Title :class="$style.title">クラブ・サークル</Title>
+    <Accordion title="アニメ研究会" :class="$style.item">
+      Sample
+    </Accordion>
+    <Accordion title="アマチュア無線研究部" :class="$style.item" />
   </div>
 </template>
 
@@ -26,6 +30,7 @@ export default Vue.extend({
   gap: 1rem;
   max-width: calc(25rem / 0.9);
   margin-left: calc((100% - min(90%, 25rem / 0.9)) / 2);
+  margin-right: calc((100% - min(90%, 25rem / 0.9)) / 2);
 }
 
 .background {
@@ -41,5 +46,9 @@ export default Vue.extend({
 .title {
   width: 100%;
   margin-bottom: 1rem;
+}
+
+.item {
+  width: 95%;
 }
 </style>
