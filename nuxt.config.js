@@ -32,7 +32,9 @@ export default {
   ],
 
   // プラグイン一覧
-  // plugins: [],
+  plugins: [
+    { src: '@/plugins/slide-up-down', ssr: false },
+  ],
 
   // コンポーネントを自動インポートする
   components: true,

@@ -10,9 +10,11 @@
         <p v-show="desc" :class="$style.desc">{{ desc }}</p>
       </div>
     </div>
-    <div v-show="opened === 1" :class="$style.box">
-      <slot />
-    </div>
+    <slide-up-down :active="opened === 1" :duration="250">
+      <div :class="$style.box">
+        <slot />
+      </div>
+    </slide-up-down>
   </div>
 </template>
 
@@ -52,7 +54,7 @@ export default Vue.extend({
 
 <style>
 .close, .open {
-  animation-duration: 0.5s;
+  animation-duration: 250ms;
   animation-fill-mode: forwards;
 }
 
