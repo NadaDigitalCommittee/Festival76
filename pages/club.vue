@@ -24,8 +24,8 @@ export default Vue.extend({
   flex-direction: column;
   align-items: flex-end;
   gap: 1rem;
-  margin-left: 5%;
-  margin-right: 5%;
+  max-width: calc(25rem / 0.9);
+  margin-left: calc((100% - min(90%, 25rem / 0.9)) / 2);
 }
 
 .background {
