@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/stage", {data:[{}],fetch:{},mutations:void 0});
