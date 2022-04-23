@@ -10,11 +10,13 @@
         <p v-show="desc" :class="$style.desc">{{ desc }}</p>
       </div>
     </div>
-    <slide-up-down :active="opened === 1" :duration="250">
-      <div :class="$style.box">
-        <slot />
-      </div>
-    </slide-up-down>
+    <client-only>
+      <slide-up-down :active="opened === 1" :duration="250">
+        <div :class="$style.box">
+          <slot />
+        </div>
+      </slide-up-down>
+    </client-only>
   </div>
 </template>
 

@@ -2,7 +2,9 @@
   <div>
     <p :class="$style.caption">部誌</p>
     <a target="_blank" rel="noopener noreferrer" :href="path">
-      <pdf :class="$style.body" :src="path" :page="1" />
+      <client-only>
+        <pdf :class="$style.body" :src="path" :page="1" />
+      </client-only>
     </a>
   </div>
 </template>
