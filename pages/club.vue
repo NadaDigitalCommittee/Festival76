@@ -3,7 +3,10 @@
     <Background2 :class="$style.background" />
     <Title :class="$style.title">クラブ・サークル</Title>
     <Accordion title="アニメ研究会" :class="$style.item">
-      <DisplayPdf path="data/sample.pdf" :class="$style.article" />
+      <div :class="$style.content">
+        <DisplayPdf path="data/sample.pdf" :class="$style.article" />
+        <YouTube video-id="d1YRs4dzfjs" :class="$style.video" />
+      </div>
     </Accordion>
     <Accordion title="アマチュア無線研究部" :class="$style.item" />
   </div>
@@ -52,7 +55,18 @@ export default Vue.extend({
   width: 95%;
 }
 
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
 .article {
   width: 35%;
+}
+
+.video {
+  width: 50%;
 }
 </style>

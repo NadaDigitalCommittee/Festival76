@@ -146,6 +146,6 @@ export default Vue.extend({
 }
 
 .box {
-  padding: 0.75rem 1rem 1.5rem 3rem;
+  padding: 0.75rem 2rem 0.75rem 3rem;
 }
 </style>

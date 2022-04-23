@@ -4777,6 +4777,11 @@ get-value@^2.0.3, get-value@^2.0.6:
   resolved "https://registry.yarnpkg.com/get-value/-/get-value-2.0.6.tgz#dc15ca1c672387ca76bd37ac0a395ba2042a2c28"
   integrity sha1-3BXKHGcjh8p2vTesCjlbogQqLCg=
 
+get-yt-thumbnail@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/get-yt-thumbnail/-/get-yt-thumbnail-1.0.0.tgz#8e91cf7d8be35c9b32d44b8f2745638e593d43a0"
+  integrity sha512-luMbR78zaxKV8ACw++vUmz139RTIgM+crJhIlKDBdQU10JFClpg6gYqMiaYp34dSXW4T7RGQYMFRDXzzGiX7Dw==
+
 git-config-path@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/git-config-path/-/git-config-path-2.0.0.tgz#62633d61af63af4405a5024efd325762f58a181b"
