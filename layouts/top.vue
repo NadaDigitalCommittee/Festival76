@@ -83,14 +83,14 @@ export default Vue.extend({
 .background {
   position: absolute;
   z-index: -1;
-  top: calc(15rem + 85vw);
+  top: 42rem;
   left: 0;
   width: 100%;
   height: 175vw;
 
   @media screen and (min-width: 800px) {
     width: 80%;
-    top: 40rem;
+    top: calc(25rem + (100vw - (min(25rem, 45vw) + 5vw)) * 0.675);
     left: 10%;
     height: 70vw;
   }
