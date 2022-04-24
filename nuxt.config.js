@@ -74,7 +74,9 @@ export default {
   ],
 
   // Nuxt Contentの設定
-  content: {},
+  content: {
+    components: true,
+  },
 
   // style-resourcesの設定
   styleResources: {
