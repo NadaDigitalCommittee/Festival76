@@ -26,7 +26,7 @@ export default Vue.extend({
   },
   data() {
     return {
-      stages: [{ name: 'Loading...', description: 'Loading...' }],
+      stages: [],
     };
   },
   async fetch() {
