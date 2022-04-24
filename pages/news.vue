@@ -1,6 +1,5 @@
 <template>
   <div :class="$style.main">
-    <Background2 :class="$style.background" />
     <News :limited="false" :class="$style.card" />
   </div>
 </template>
@@ -25,16 +24,6 @@ export default Vue.extend({
   align-items: center;
   gap: 4rem;
   width: 100%;
-}
-
-.background {
-  position: absolute;
-  max-width: calc(25rem / 0.9);
-  z-index: -1;
-  top: 15rem;
-  left: calc((100vw - min(100vw, 25rem / 0.9)) / 2);
-  width: 100%;
-  height: calc(min(100vw, 25rem / 0.9) * 0.75);
 }
 
 .card {

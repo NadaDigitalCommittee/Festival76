@@ -1,6 +1,5 @@
 <template>
   <div :class="$style.main">
-    <Background2 :class="$style.background" />
     <Title :class="$style.title">クラブ・サークル</Title>
     <Accordion v-for="(club, index) in clubs" :key="index" :title="club.name" :class="$style.item">
       <div :class="$style.content">
@@ -47,16 +46,6 @@ export default Vue.extend({
   max-width: calc(25rem / 0.9);
   margin-left: calc((100% - min(90%, 25rem / 0.9)) / 2);
   margin-right: calc((100% - min(90%, 25rem / 0.9)) / 2);
-}
-
-.background {
-  position: absolute;
-  max-width: calc(25rem / 0.9);
-  z-index: -1;
-  top: 15rem;
-  left: calc((100vw - min(100vw, 25rem / 0.9)) / 2);
-  width: 100%;
-  height: calc(min(100vw, 25rem / 0.9) * 0.75);
 }
 
 .title {

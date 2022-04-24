@@ -54,7 +54,7 @@
 import Vue from 'vue';
 
 export default Vue.extend({
-  name: 'DefaultLayout',
+  name: 'TopLayout',
   data() {
     return {
       expanded: -1,
@@ -87,26 +87,20 @@ export default Vue.extend({
   height: 175vw;
 
   @media screen and (min-width: 800px) {
-    width: 80%;
-    top: 40rem;
-    left: 10%;
-    height: 140vw;
+    display: none;
   }
 }
 
 .background2 {
-  position: absolute;
-  z-index: -1;
-  top: 15rem;
-  left: 0;
-  width: 100%;
-  height: 75vw;
-
+  display: none;
   @media screen and (min-width: 800px) {
-    width: 80%;
-    top: 12rem;
-    left: 10%;
-    height: 60vw;
+    display: inherit;
+    position: absolute;
+    z-index: -1;
+    width: calc((100% - (min(25rem, 45%) + 5%)) * 0.9);
+    top: 22rem;
+    left: calc((100% - (min(25rem, 45%) + 5%)) * 0.05);
+    height: calc((100% - (min(25rem, 45%) + 5%)) * 0.675);
   }
 }
 
@@ -140,14 +134,9 @@ export default Vue.extend({
 .main {
   display: flex;
   flex-direction: column;
-  /* min-height: calc(max(100vh - 5rem, 50rem + 175vw)); */
   min-height: calc(100vh - 5rem);
   margin-top: 5rem;
   z-index: 50;
-
-  /* @media screen and (min-width: 800px) {                */
-  /*   min-height: calc(max(100vh - 5rem, 54rem + 140vw)); */
-  /* }                                                     */
 }
 
 .header2 {
