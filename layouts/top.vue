@@ -97,9 +97,9 @@ export default Vue.extend({
     display: inherit;
     position: absolute;
     z-index: -1;
-    width: calc((100% - (min(25rem, 45%) + 5%)) * 0.9);
+    width: calc((100% - (min(25rem, 45%) + 5%)) * 0.85);
     top: 22rem;
-    left: calc((100% - (min(25rem, 45%) + 5%)) * 0.05);
+    left: calc((100% - (min(25rem, 45%) + 5%)) * 0.075);
     height: calc((100% - (min(25rem, 45%) + 5%)) * 0.675);
   }
 }

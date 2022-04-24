@@ -1,5 +1,5 @@
 <template>
-  <div :class="$style.main">
+  <div>
     <News :limited="false" :class="$style.card" />
   </div>
 </template>
@@ -18,17 +18,13 @@ export default Vue.extend({
 </script>
 
 <style module lang="scss">
-.main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4rem;
-  width: 100%;
-}
-
 .card {
   width: 90%;
-  max-width: 25rem;
-  min-height: 32rem;
+  max-width: 40rem;
+  margin: 0 auto 2rem;
+
+  @media screen and (min-width: 800px)  {
+    width: 70%;
+  }
 }
 </style>

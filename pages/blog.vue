@@ -41,9 +41,12 @@ export default Vue.extend({
   flex-direction: column;
   align-items: flex-end;
   gap: 1rem;
-  max-width: calc(25rem / 0.9);
-  margin-left: calc((100% - min(90%, 25rem / 0.9)) / 2);
-  margin-right: calc((100% - min(90%, 25rem / 0.9)) / 2);
+  width: 90%;
+  margin: 2rem auto;
+
+  @media screen and (min-width: 800px) {
+    width: 70%;
+  }
 }
 
 .title {
@@ -53,6 +56,9 @@ export default Vue.extend({
 
 .item {
   width: 95%;
+  @media screen and (min-width: 800px) {
+    width: 100%;
+  }
 }
 </style>
 
@@ -176,6 +182,7 @@ export default Vue.extend({
   img {
     display: block;
     width: 80%;
+    max-width: 30rem;
     margin: 1rem auto 1rem;
   }
 }
