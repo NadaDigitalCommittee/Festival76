@@ -3,7 +3,10 @@
     {
       name: "アニメ研究会",
       videoId: "d1YRs4dzfjs",
-      article: "data/sample.pdf",
+      article: {
+        data: "sample.pdf",
+        cover: "sample.svg",
+      },
     },
     {
       name: "アマチュア無線研究部",

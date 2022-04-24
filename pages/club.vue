@@ -3,9 +3,9 @@
     <Background2 :class="$style.background" />
     <Title :class="$style.title">クラブ・サークル</Title>
     <Accordion v-for="(club, index) in clubs" :key="index" :title="club.name" :class="$style.item">
-      <div v-if="club.article || club.videoId" :class="$style.content">
-        <DisplayPdf v-if="club.article" :path="club.article" :class="$style.article" />
-        <YouTube v-if="club.videoId" :video-id="club.videoId" :class="$style.video" />
+      <div :class="$style.content">
+        <Article :article="club.article" :class="$style.article" />
+        <YouTube :video-id="club.videoId" :class="$style.video" />
       </div>
     </Accordion>
   </div>
@@ -23,7 +23,7 @@ export default Vue.extend({
   },
   data() {
     return {
-      clubs: [{ name: 'Loading...' }],
+      clubs: [],
     };
   },
   async fetch() {
@@ -77,7 +77,7 @@ export default Vue.extend({
 }
 
 .article {
-  flex-grow: 1;
+  width: 35%;
 }
 
 .video {

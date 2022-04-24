@@ -1,11 +1,12 @@
 <template>
   <div>
-    <p :class="$style.caption">動画</p>
+    <p :class="$style.caption">部誌</p>
     <div :class="$style.body">
-      <a v-if="videoId" target="_blank" rel="noopener noreferrer" :href="`https://youtube.com/watch?v=${videoId}`">
-        <img :src="`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`">
+      <a v-if="article" target="_blank" rel="noopener noreferrer" :href="`pdf/${article.data}`">
+        <img v-if="article.cover" :src="require(`@/assets/img/cover/${article.cover}`)">
+        <p v-if="!article.cover" :class="$style.alt">No<br>Image</p>
       </a>
-      <p v-if="!videoId">No Video</p>
+      <p v-if="!article" :class="$style.alt">No<br>Article</p>
     </div>
   </div>
 </template>
@@ -14,10 +15,14 @@
 import Vue from 'vue';
 
 export default Vue.extend({
-  name: 'YouTube',
+  name: 'Article',
   props: {
-    videoId: {
-      type: String,
+    article: {
+      type: Object as Vue.PropType<{
+        data: string;
+        cover?: string;
+      }>,
+      required: true,
     },
   },
 });
@@ -40,11 +45,12 @@ export default Vue.extend({
 
   p {
     color: $orange;
+    font-size: 1.5rem;
     font-family: futura-pt, sans-serif;
     text-align: center;
-    font-size: 1.5rem;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
   }
 }
+
 </style>
