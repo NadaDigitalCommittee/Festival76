@@ -31,15 +31,20 @@ export default Vue.extend({
 .main {
   height: 100%;
   display: flex;
-  align-items: center;
   justify-content: space-around;
   background-color: $background;
-  padding-top: 1.25rem;
-  padding-bottom: 0.75rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.25rem;
+
+  @media screen and (min-width: 800px) {
+    padding-left: 2rem;
+    justify-content: flex-start;
+  }
 }
 
 .logo {
   height: 100%;
+  padding: 0.5rem;
 
   img {
     height: 100%;

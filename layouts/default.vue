@@ -17,16 +17,18 @@
 </template>
 
 <style>
-.expand {
-  animation-name: slideIn;
-  animation-duration: 500ms;
-  animation-fill-mode: forwards;
-}
+@media screen and (max-width: 799px) {
+  .expand {
+    animation-name: slideIn;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+  }
 
-.fold {
-  animation-name: slideOut;
-  animation-duration: 500ms;
-  animation-fill-mode: forwards;
+  .fold {
+    animation-name: slideOut;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+  }
 }
 
 @keyframes slideIn {
@@ -81,14 +83,14 @@ export default Vue.extend({
 .background {
   position: absolute;
   z-index: -1;
-  top: 38rem;
+  top: calc(15rem + 85vw);
   left: 0;
   width: 100%;
   height: 175vw;
 
   @media screen and (min-width: 800px) {
     width: 80%;
-    top: 40rem;
+    top: calc(12rem + 70vw);
     left: 10%;
     height: 140vw;
   }
@@ -126,6 +128,13 @@ export default Vue.extend({
   width: 50%;
   height: 100%;
   z-index: 95;
+
+  @media screen and (min-width: 800px) {
+    left: unset;
+    right: 0;
+    width: unset;
+    height: unset;
+  }
 }
 
 .hamburger {
