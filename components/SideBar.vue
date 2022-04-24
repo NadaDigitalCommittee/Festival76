@@ -10,6 +10,10 @@
       <div :class="$style.bar" />
       <nuxt-link to="/blog" :class="$style.btn">ブログ</nuxt-link>
       <div :class="$style.bar" />
+      <nuxt-link to="/ticket" :class="$style.btn">整理券</nuxt-link>
+      <div :class="$style.bar" />
+      <a href="グーグルドライブ" :class="$style.btn">パンフレット</a>
+      <div :class="$style.bar" />
     </div>
   </div>
 </template>
