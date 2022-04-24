@@ -113,6 +113,10 @@ export default Vue.extend({
   align-items: center;
   padding: 0 0.5rem;
 
+  @media screen and (min-width: 800px) {
+    display: none;
+  }
+
   span {
     display: block;
     background-color: $white;

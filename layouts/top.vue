@@ -17,16 +17,18 @@
 </template>
 
 <style>
-.expand {
-  animation-name: slideIn;
-  animation-duration: 500ms;
-  animation-fill-mode: forwards;
-}
+@media screen and (max-width: 799px) {
+  .expand {
+    animation-name: slideIn;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+  }
 
-.fold {
-  animation-name: slideOut;
-  animation-duration: 500ms;
-  animation-fill-mode: forwards;
+  .fold {
+    animation-name: slideOut;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+  }
 }
 
 @keyframes slideIn {
@@ -81,13 +83,16 @@ export default Vue.extend({
 .background {
   position: absolute;
   z-index: -1;
-  top: 38rem;
+  top: 42rem;
   left: 0;
   width: 100%;
   height: 175vw;
 
   @media screen and (min-width: 800px) {
-    display: none;
+    width: 80%;
+    top: calc(25rem + (100vw - (min(25rem, 45vw) + 5vw)) * 0.675);
+    left: 10%;
+    height: 70vw;
   }
 }
 
@@ -100,7 +105,7 @@ export default Vue.extend({
     width: calc((100% - (min(25rem, 45%) + 5%)) * 0.85);
     top: 22rem;
     left: calc((100% - (min(25rem, 45%) + 5%)) * 0.075);
-    height: calc((100% - (min(25rem, 45%) + 5%)) * 0.675);
+    height: calc((100vw - (min(25rem, 45vw) + 5vw)) * 0.675);
   }
 }
 
@@ -120,6 +125,13 @@ export default Vue.extend({
   width: 50%;
   height: 100%;
   z-index: 95;
+
+  @media screen and (min-width: 800px) {
+    left: unset;
+    right: 0;
+    width: unset;
+    height: unset;
+  }
 }
 
 .hamburger {

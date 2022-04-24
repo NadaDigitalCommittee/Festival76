@@ -42,21 +42,34 @@ export default Vue.extend({
   padding-top: 6rem;
   height: 100%;
   background-color: $background;
+
+  @media screen and (min-width: 800px) {
+    background: transparent;
+    flex-direction: row;
+    padding: 0.75rem 1rem 0.25rem 0;
+    height: 5rem;
+  }
 }
 
 .bar {
   width: 90%;
   height: 1px;
   background-color: $white;
-}
 
-.dummy, .btn {
-  width: 90%;
+  @media screen and (min-width: 800px) {
+    display: none;
+  }
 }
 
 .btn {
+  width: 90%;
   color: $white;
   font-weight: bold;
-  padding: 1rem 0 1rem 1.5rem;
+  padding: 1rem 1.5rem 1rem 1.5rem;
+
+  @media screen and (min-width: 800px) {
+    width: unset;
+    padding: 1rem;
+  }
 }
 </style>
