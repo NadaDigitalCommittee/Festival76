@@ -5,7 +5,7 @@
       <p>
         灘校一の美少女を決めるMs.灘コンテスト。魅力的な子たちがステージに集結します！あなたの推しを応援しよう！
       </p>
-      <a href="/stages/ms#voteform" class="votebutton">投票はこちら</a>
+      <a href="stages/ms/#voteform" class="votebutton">投票はこちら</a>
       <article v-for="(player, index) in players" :key="index" class="player">
         <img
           :src="require(`@/assets/img/stage/ms/${player.img}`)"
