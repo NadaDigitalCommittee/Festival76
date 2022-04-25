@@ -96,7 +96,7 @@ export default Vue.extend({
 .desc {
   font-size: 0.75rem;
   font-weight: bold;
-  height: 2em;
+  height: 3em;
   margin-bottom: 1rem;
 }
 
