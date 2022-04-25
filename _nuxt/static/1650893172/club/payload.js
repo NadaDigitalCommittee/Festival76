@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/club", {data:[{}],fetch:{"ClubPage:0":{clubs:[{name:"アニメ研究会",videoId:"d1YRs4dzfjs",article:{data:"sample.pdf",cover:"sample.svg"}},{name:"アマチュア無線研究部"}]}},mutations:void 0});
