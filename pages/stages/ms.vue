@@ -7,7 +7,9 @@
         <p>
           灘校一の美少女を決めるMs.灘コンテスト。魅力的な子たちがステージに集結します！あなたの推しを応援しよう！
         </p>
-        <a href="stages/ms/#voteform" class="votebutton">投票はこちら</a>
+        <a href="#" class="votebutton" v-scroll-to="'#voteform'"
+          >投票はこちら</a
+        >
       </section>
 
       <section>
@@ -19,15 +21,21 @@
       </section>
       <section>
         <h1 class="midashi">出場者一覧</h1>
-        <article v-for="(player, index) in players" :key="index" class="player">
-          <img
-            :src="require(`@/assets/img/stage/ms/${player.img}`)"
-            alt="Ms.灘出場者"
-          />
-          <h2>{{ "No." + Number(index + 1) + " " + player.name }}</h2>
-          <p class="character">{{ player.character }}</p>
-          <p class="desc">{{ player.desc }}</p>
-        </article>
+        <div class="playerswrapper">
+          <article
+            v-for="(player, index) in players"
+            :key="index"
+            class="player"
+          >
+            <img
+              :src="require(`@/assets/img/stage/ms/${player.img}`)"
+              alt="Ms.灘出場者"
+            />
+            <h2>{{ "No." + Number(index + 1) + " " + player.name }}</h2>
+            <p class="character">{{ player.character }}</p>
+            <p class="desc">{{ player.desc }}</p>
+          </article>
+        </div>
       </section>
       <section>
         <h1 id="voteform" class="midashi">投票フォーム</h1>
