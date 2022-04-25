@@ -5,7 +5,7 @@
       <section>
         <h1 class="midashi">企画説明</h1>
         <p>
-          灘校で最もかっこいいのは誰なのか。屈指のイケメンたちが集まったこのステージで、‘‘本物‘‘が決定する。
+          灘校屈指の脳筋たちが集結！鍛え抜いた”美ボディ”を魅せつけます！パワーーーー！！
         </p>
         <a href="#" class="votebutton" v-scroll-to="'#voteform'"
           >投票はこちら</a
@@ -14,9 +14,7 @@
 
       <section>
         <h1 class="midashi">企画概要</h1>
-        <p class="outline">
-          日時：<span>10:15-11:15(DAY1)<br />13:00-14:00(DAY2)</span>
-        </p>
+        <p class="outline">日時：<span>9:40-10:10(DAY1)</span></p>
         <p class="outline">場所：中庭ステージ</p>
       </section>
 
@@ -31,7 +29,7 @@
           >
             <img
               :src="require(`@/assets/img/stage/muscle/${player.img}`)"
-              alt="Mr.灘出場者"
+              alt="筋肉王出場者"
             />
             <h2>{{ "No." + Number(index + 1) + " " + player.name }}</h2>
             <p class="desc" v-text="player.desc"></p>
@@ -48,7 +46,7 @@
 <script lang="ts">
 import Vue from "vue";
 export default Vue.extend({
-  name: "MrPage",
+  name: "MusclePage",
   head() {
     return {
       title: "筋肉王",
