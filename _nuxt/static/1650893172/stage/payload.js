@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/stage", {data:[{}],fetch:{"StagePage:0":{stages:[{name:"IPPONグランプリ",description:"企画説明",videoId:"d1YRs4dzfjs",detail:"\u002Fstages\u002Fms"}]}},mutations:void 0});
