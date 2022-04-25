@@ -31,6 +31,5 @@ module.exports = {
       'warn', { argsIgnorePattern: '^_' },
     ],
     
-    'linebreak-style': ['error', 'windows'],
   },
 };

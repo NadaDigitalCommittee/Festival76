@@ -4,7 +4,7 @@
       name: "IPPONグランプリ",
       description: "企画説明",
       videoId: "d1YRs4dzfjs",
-      detail: "/news",
+      detail: "/stages/ms",
     },
   ],
 }
