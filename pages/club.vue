@@ -1,12 +1,14 @@
 <template>
   <div :class="$style.main">
     <Title :class="$style.title">クラブ・サークル</Title>
-    <Accordion v-for="(club, index) in clubs" :key="index" :title="club.name" :class="$style.item">
-      <div :class="$style.content">
-        <Article :article="club.article" :class="$style.article" />
-        <YouTube :video-id="club.videoId" :class="$style.video" />
-      </div>
-    </Accordion>
+    <div :class="$style.list">
+      <Accordion v-for="club in clubs" :key="club.name" :title="club.name" :class="$style.item">
+        <div :class="$style.content">
+          <Article :article="club.article" :class="$style.article" />
+          <YouTube :video-id="club.videoId" :class="$style.video" />
+        </div>
+      </Accordion>
+    </div>
   </div>
 </template>
 
@@ -39,22 +41,44 @@ export default Vue.extend({
 
 <style module lang="scss">
 .main {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 1rem;
-  max-width: calc(25rem / 0.9);
-  margin-left: calc((100% - min(90%, 25rem / 0.9)) / 2);
-  margin-right: calc((100% - min(90%, 25rem / 0.9)) / 2);
+  width: 90%;
+  max-width: 25rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (min-width: 800px) {
+    width: 80%;
+    max-width: unset;
+  }
 }
 
 .title {
   width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.list {
+  display: flex;
+  width: 95%;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-left: auto;
+  gap: 1rem;
+
+  @media screen and (min-width: 800px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
 }
 
 .item {
-  width: 95%;
+  width: 100%;
+
+  @media screen and (min-width: 800px) {
+    width: 20rem;
+    height: 12.5rem;
+  }
 }
 
 .content {

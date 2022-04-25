@@ -1,15 +1,17 @@
 <template>
   <div :class="$style.main">
     <Title :class="$style.title">ステージ</Title>
-    <Accordion
-      v-for="(stage, index) in stages" :key="index" :title="stage.name" :class="$style.item"
-    >
-      <div :class="$style.content">
-        <YouTube v-if="stage.videoId" :video-id="stage.videoId" :class="$style.video" />
-        <p :class="$style.desc">{{ stage.description }}</p>
-        <More v-if="stage.detail" :class="$style.more" :link="stage.detail" />
-      </div>
-    </Accordion>
+    <div :class="$style.list">
+      <Accordion
+        v-for="(stage, index) in stages" :key="index" :title="stage.name" :class="$style.item"
+      >
+        <div :class="$style.content">
+          <YouTube v-if="stage.videoId" :video-id="stage.videoId" :class="$style.video" />
+          <p :class="$style.desc">{{ stage.description }}</p>
+          <More v-if="stage.detail" :class="$style.more" :link="stage.detail" />
+        </div>
+      </Accordion>
+    </div>
   </div>
 </template>
 
@@ -42,40 +44,64 @@ export default Vue.extend({
 
 <style module lang="scss">
 .main {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 1rem;
-  max-width: calc(25rem / 0.9);
-  margin-left: calc((100% - min(90%, 25rem / 0.9)) / 2);
-  margin-right: calc((100% - min(90%, 25rem / 0.9)) / 2);
+  width: 90%;
+  max-width: 25rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (min-width: 800px) {
+    width: 80%;
+    max-width: unset;
+  }
 }
 
 .title {
   width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.list {
+  display: flex;
+  width: 95%;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-left: auto;
+  gap: 1rem;
+
+  @media screen and (min-width: 800px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
 }
 
 .item {
-  width: 95%;
+  width: 100%;
+
+  @media screen and (min-width: 800px) {
+    width: 20rem;
+  }
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
 }
 
 .video {
   width: 50%;
+  margin-bottom: 1.25rem;
 }
 
 .desc {
   font-size: 0.75rem;
   font-weight: bold;
+  height: 3em;
+  margin-bottom: 1rem;
 }
 
 .more {
   align-self: flex-end;
+  margin-top: auto;
 }
 </style>

@@ -44,12 +44,13 @@
   </div>
 </template>
 <script lang="ts">
-import Vue from "vue";
+import Vue from 'vue';
+
 export default Vue.extend({
-  name: "MsPage",
+  name: 'MsPage',
   head() {
     return {
-      title: "Ms.灘",
+      title: 'Ms.灘',
     };
   },
   data() {

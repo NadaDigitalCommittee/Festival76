@@ -8,18 +8,17 @@
         />
         <h2 :class="$style.title">{{ title }}</h2>
       </div>
-      <div v-if="date || desc" :class="$style.info">
-        <p v-if="date" :class="$style.date">{{ date }}</p>
-        <p v-if="desc" :class="$style.desc">{{ desc }}</p>
-      </div>
     </div>
     <client-only>
       <slide-up-down :active="opened === 1" :duration="250">
-        <div :class="$style.box">
+        <div :class="[$style.box, $style.slider]">
           <slot />
         </div>
       </slide-up-down>
     </client-only>
+    <div :class="[$style.box, $style.noslide]">
+      <slot />
+    </div>
   </div>
 </template>
 
@@ -107,6 +106,10 @@ export default Vue.extend({
   gap: 1rem;
   width: 100%;
   padding: 0.75rem 1rem 0.75rem 3rem;
+
+  @media screen and (min-width: 800px) {
+    padding-left: 1rem;
+  }
 }
 
 .mark {
@@ -119,6 +122,10 @@ export default Vue.extend({
   border-right: 2px solid $orange;
   transform-origin: 75% 75%;
   transform: rotate(-45deg);
+
+  @media screen and (min-width: 800px) {
+    display: none;
+  }
 }
 
 .catch {
@@ -129,29 +136,26 @@ export default Vue.extend({
 .title {
   font-weight: bold;
   color: $orange;
-}
 
-.info {
-  flex-shrink: 2;
-  display: flex;
-  gap: 0 1.5rem;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  font-size: 0.625rem;
-  font-weight: 500;
-  word-break: keep-all;
-}
-
-.date {
-  color: $gray;
-  margin-left: auto;
-}
-
-.desc {
-  margin-left: auto;
 }
 
 .box {
   margin: 0.75rem 2rem 0.75rem 3rem;
+
+  @media screen and (min-width: 800px) {
+    margin-left: 2rem;
+  }
+}
+
+.noslide {
+  @media screen and (max-width: 799px) {
+    display: none;
+  }
+}
+
+.slider {
+  @media screen and (min-width: 800px) {
+    display: none;
+  }
 }
 </style>

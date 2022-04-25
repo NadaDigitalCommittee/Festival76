@@ -90,7 +90,7 @@ export default Vue.extend({
 
   @media screen and (min-width: 800px) {
     width: 80%;
-    top: calc(25rem + (100vw - (min(25rem, 45vw) + 5vw)) * 0.675);
+    top: calc(24rem + (100vw - (min(25rem, 45vw) + 5vw)) * 0.675);
     left: 10%;
     height: 70vw;
   }
@@ -103,7 +103,7 @@ export default Vue.extend({
     position: absolute;
     z-index: -1;
     width: calc((100% - (min(25rem, 45%) + 5%)) * 0.85);
-    top: 22rem;
+    top: 23rem;
     left: calc((100% - (min(25rem, 45%) + 5%)) * 0.075);
     height: calc((100vw - (min(25rem, 45vw) + 5vw)) * 0.675);
   }

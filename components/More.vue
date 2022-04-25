@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link to="/news" :class="$style.more">
+  <nuxt-link :to="link" :class="$style.more">
     <p>MORE</p>
     <span />
   </nuxt-link>
