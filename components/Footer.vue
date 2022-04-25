@@ -2,16 +2,20 @@
   <footer :class="$style.parent">
     <div :class="$style.main">
       <p :class="$style.follow">Follow us!!</p>
-      <a href="https://youtu.be/78hfq6DQrGo">
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://youtube.com/channel/UCLC_wHGsAxEGR8BSHcPK1SQ"
+      >
         <img :class="$style.btn" src="~/assets/img/youtube.svg" />
       </a>
-      <a href="https://instagram.com/nada_schoolfestival">
+      <a target="_blank" rel="noopener noreferrer" href="https://instagram.com/nada_schoolfestival">
         <img :class="$style.btn" src="~/assets/img/instagram.png" />
       </a>
-      <a href="https://lin.ee/bIbfdFl">
+      <a target="_blank" rel="noopener noreferrer" href="https://lin.ee/bIbfdFl">
         <img :class="$style.btn" src="~/assets/img/line.svg" />
       </a>
-      <a href="https://twitter.com/Nada_festival">
+      <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/Nada_festival">
         <img :class="$style.btn" src="~/assets/img/twitter.svg" />
       </a>
     </div>
