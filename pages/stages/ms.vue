@@ -15,7 +15,7 @@
       <section>
         <h1 class="midashi">企画概要</h1>
         <p class="outline">
-          日時：<span>30時~42時（６日目）<br />50時~32時（9日目）</span>
+          日時：<span>10:15-11:15(DAY1)<br />13:00-14:00(DAY2)</span>
         </p>
         <p class="outline">場所：中庭ステージ</p>
       </section>
@@ -58,7 +58,7 @@ export default Vue.extend({
     };
   },
   async fetch() {
-    const content = await this.$content("ms").fetch();
+    const content = await this.$content("stage/ms").fetch();
 
     if (!content || Array.isArray(content)) {
       return;
