@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/stage", (function(a){return {data:[{}],fetch:{"StagePage:0":{stages:[{name:"Ms.灘",description:"灘校一の美少女を決めるMs.灘コンテスト。魅力的な子たちがステージに集結します！あなたの推しを応援しよう！",videoId:a,detail:"\u002Fstages\u002Fms"},{name:"Mr.灘",description:"灘校で最もかっこいいのは誰なのか。屈指のイケメンたちが集まったこのステージで、‘‘本物‘‘が決定する。",videoId:a,detail:"\u002Fstages\u002Fmr"}]}},mutations:void 0}}("d1YRs4dzfjs")));
