@@ -30,5 +30,7 @@ module.exports = {
     'no-unused-vars': [
       'warn', { argsIgnorePattern: '^_' },
     ],
+    
+    'linebreak-style': ['error', 'windows'],
   },
 };

@@ -2,26 +2,48 @@
   <div class="main">
     <Title class="title">Ms.灘</Title>
     <div class="content">
-      <p>
-        灘校一の美少女を決めるMs.灘コンテスト。魅力的な子たちがステージに集結します！あなたの推しを応援しよう！
-      </p>
-      <a href="stages/ms/#voteform" class="votebutton">投票はこちら</a>
-      <article v-for="(player, index) in players" :key="index" class="player">
-        <img
-          :src="require(`@/assets/img/stage/ms/${player.img}`)"
-          alt="Ms灘出場者"
-        />
-        <h2>{{ "No." + Number(index + 1) + " " + player.name }}</h2>
-        <p class="character">{{ player.character }}</p>
-        <p class="desc">{{ player.desc }}</p>
-      </article>
-      <h1 id="voteform">ここに投票フォーム</h1>
+      <section>
+        <h1 class="midashi">企画説明</h1>
+        <p>
+          灘校一の美少女を決めるMs.灘コンテスト。魅力的な子たちがステージに集結します！あなたの推しを応援しよう！
+        </p>
+        <a href="stages/ms/#voteform" class="votebutton">投票はこちら</a>
+      </section>
+
+      <section>
+        <h1 class="midashi">企画概要</h1>
+        <p class="outline">
+          日時：<span>30時~42時（６日目）<br />50時~32時（9日目）</span>
+        </p>
+        <p class="outline">場所：中庭ステージ</p>
+      </section>
+      <section>
+        <h1 class="midashi">出場者一覧</h1>
+        <article v-for="(player, index) in players" :key="index" class="player">
+          <img
+            :src="require(`@/assets/img/stage/ms/${player.img}`)"
+            alt="Ms.灘出場者"
+          />
+          <h2>{{ "No." + Number(index + 1) + " " + player.name }}</h2>
+          <p class="character">{{ player.character }}</p>
+          <p class="desc">{{ player.desc }}</p>
+        </article>
+      </section>
+      <section>
+        <h1 id="voteform" class="midashi">投票フォーム</h1>
+      </section>
     </div>
   </div>
 </template>
 <script lang="ts">
 import Vue from "vue";
 export default Vue.extend({
+  name: "MsPage",
+  head() {
+    return {
+      title: "Ms.灘",
+    };
+  },
   data() {
     return {
       players: [],
@@ -51,11 +73,31 @@ export default Vue.extend({
 .content {
   background-color: #fff;
   padding: 5%;
-  p {
-    font-weight: bold;
-    text-align: justify;
-    line-height: 1.5;
-    font-size: 0.9em;
+
+  section {
+    margin-bottom: 1.5em;
+
+    h1.midashi {
+      font-weight: 600;
+      font-size: 1.4em;
+      margin-bottom: 0.5em;
+      position: relative;
+      border-bottom: 2px solid $orange;
+      // border-bottom: 2px solid black;
+      line-height: 2;
+    }
+
+    p {
+      font-weight: 600;
+      text-align: justify;
+      line-height: 1.5;
+      font-size: 0.9em;
+      margin-bottom: 1em;
+    }
+    p.outline {
+      font-size: 1.2em;
+      display: flex;
+    }
   }
 
   // 投票ボタン
@@ -65,7 +107,7 @@ export default Vue.extend({
     margin-top: 1em;
     padding: 0.7em;
     border-radius: 1em;
-    background-color: #eb5a00;
+    background-color: $orange;
     color: #fff;
     font-weight: bold;
     width: fit-content;
@@ -78,12 +120,12 @@ export default Vue.extend({
     padding: 2em 0;
     line-height: 1.5;
     h2 {
-      font-weight: bold;
+      font-weight: 900;
       font-size: 1.5em;
       margin-bottom: 0.3em;
     }
     img {
-      width: 100%;
+      width: 80%;
       margin-bottom: 1em;
     }
     p.character {
@@ -93,7 +135,7 @@ export default Vue.extend({
       content: "キャラ：";
     }
     p.desc {
-      font-weight: 600;
+      font-weight: 500;
       text-align: justify;
     }
   }
