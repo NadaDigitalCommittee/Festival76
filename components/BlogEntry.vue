@@ -266,7 +266,8 @@ export default Vue.extend({
   img {
     display: block;
     width: 80%;
-    max-width: 30rem;
+    object-fit: contain;
+    max-height: 20rem;
     margin: 1rem auto 1rem;
   }
 }
