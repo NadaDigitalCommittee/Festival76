@@ -59,7 +59,7 @@ export default Vue.extend({
     };
   },
   async fetch() {
-    const content = await this.$content("stage/ms").fetch();
+    const content = await this.$content('stage/ms').fetch();
 
     if (!content || Array.isArray(content)) {
       return;

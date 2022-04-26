@@ -44,12 +44,13 @@
   </div>
 </template>
 <script lang="ts">
-import Vue from "vue";
+import Vue from 'vue';
+
 export default Vue.extend({
-  name: "MusclePage",
+  name: 'MusclePage',
   head() {
     return {
-      title: "筋肉王",
+      title: '筋肉王',
     };
   },
   data() {
@@ -58,7 +59,7 @@ export default Vue.extend({
     };
   },
   async fetch() {
-    const content = await this.$content("stage/muscle").fetch();
+    const content = await this.$content('stage/muscle').fetch();
 
     if (!content || Array.isArray(content)) {
       return;
