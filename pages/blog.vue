@@ -1,12 +1,14 @@
 <template>
   <div :class="$style.main">
     <Title :class="$style.title">ブログ</Title>
-    <BlogEntry
-      :class="$style.item"
-      v-for="entry in entries"
-      :key="entry.title"
-      :entry="entry"
-    />
+    <div :class="$style.list">
+      <BlogEntry
+        :class="$style.item"
+        v-for="entry in entries"
+        :key="entry.title"
+        :entry="entry"
+      />
+    </div>
   </div>
 </template>
 
@@ -33,21 +35,26 @@ export default Vue.extend({
 
 <style module lang="scss">
 .main {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 1rem;
   width: 90%;
-  margin: 2rem auto;
+  max-width: 30rem;
+  margin: 1rem auto 3rem;
 
   @media screen and (min-width: 800px) {
+    max-width: unset;
     width: 70%;
   }
 }
 
 .title {
   width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
 }
 
 .item {

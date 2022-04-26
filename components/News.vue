@@ -2,9 +2,9 @@
   <div :class="$style.box">
     <p :class="$style.title">News</p>
     <div :class="$style.list">
-      <p v-for="(item, index) in news" :key=index>{{ item }}</p>
+      <p v-for="(item, index) in (limited? news.slice(0, 3) : news)" :key=index>{{ item }}</p>
     </div>
-    <More v-if="limited" link="/news" />
+    <More v-if="limited && news.length > 3" link="/news" />
   </div>
 </template>
 
@@ -21,7 +21,7 @@ export default Vue.extend({
   },
   data() {
     return {
-      news: ['Loading...'],
+      news: [],
     };
   },
   async fetch() {
@@ -30,11 +30,7 @@ export default Vue.extend({
     if (!content || Array.isArray(content)) {
       return;
     }
-    if (this.limited) {
-      this.news = content.news.slice(0, 3);
-    } else {
-      this.news = content.news;
-    }
+    this.news = content.news;
   },
 });
 </script>

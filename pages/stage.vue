@@ -46,8 +46,7 @@ export default Vue.extend({
 .main {
   width: 90%;
   max-width: 25rem;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 1rem auto 3rem;
 
   @media screen and (min-width: 800px) {
     width: 80%;
@@ -69,6 +68,7 @@ export default Vue.extend({
   gap: 1rem;
 
   @media screen and (min-width: 800px) {
+    gap: 2.5rem 1.5rem;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;

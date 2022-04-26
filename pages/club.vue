@@ -43,8 +43,7 @@ export default Vue.extend({
 .main {
   width: 90%;
   max-width: 25rem;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 1rem auto 3rem;
 
   @media screen and (min-width: 800px) {
     width: 80%;
@@ -69,6 +68,7 @@ export default Vue.extend({
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
+    gap: 2.5rem 1.5rem;
   }
 }
 
@@ -77,7 +77,7 @@ export default Vue.extend({
 
   @media screen and (min-width: 800px) {
     width: 20rem;
-    height: 12.5rem;
+    height: 13rem;
   }
 }
 
@@ -86,7 +86,7 @@ export default Vue.extend({
   justify-content: space-between;
   align-items: flex-start;
   gap: 15%;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
 }
 
 .article {

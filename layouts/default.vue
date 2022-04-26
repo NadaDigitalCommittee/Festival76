@@ -2,6 +2,8 @@
   <div :class="$style.parent">
     <Background :class="$style.background" />
     <Background2 :class="$style.background2" />
+    <Background :class="$style.background3" />
+    <Background2 :class="$style.background4" />
     <Header :class="$style.header" />
     <HamburgerButton :class="$style.hamburger" @click.native="toggle()" :expanded="expanded"/>
     <SideBar
@@ -107,6 +109,38 @@ export default Vue.extend({
   @media screen and (min-width: 800px) {
     width: 80%;
     top: 12rem;
+    left: 10%;
+    height: 60vw;
+  }
+}
+
+.background3 {
+  position: absolute;
+  z-index: -1;
+  top: calc(15rem + 340vw);
+  left: 0;
+  width: 100%;
+  height: 175vw;
+
+  @media screen and (min-width: 800px) {
+    width: 80%;
+    top: calc(12rem + 275vw);
+    left: 10%;
+    height: 140vw;
+  }
+}
+
+.background4 {
+  position: absolute;
+  z-index: -1;
+  top: calc(15rem + 260vw);
+  left: 0;
+  width: 100%;
+  height: 75vw;
+
+  @media screen and (min-width: 800px) {
+    width: 80%;
+    top: calc(12rem + 210vw);
     left: 10%;
     height: 60vw;
   }
