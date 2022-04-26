@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/blog", {data:[{}],fetch:{"BlogPage:0":{_error:{message:"\u002Fblog not found",statusCode:500}}},mutations:void 0});
