@@ -28,7 +28,7 @@ export default Vue.extend({
     };
   },
   async fetch() {
-    this.entries = await this.$content('blog', { deep: true }).fetch();
+    this.entries = (await this.$content('blog', { deep: true }).fetch()).reverse();
   },
 });
 </script>
