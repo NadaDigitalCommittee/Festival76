@@ -16,6 +16,10 @@
       name: "占いの館",
     },
     {
+      name: "化学研究部",
+      videoId: "_vlbqpFpLBM",
+    },
+    {
       name: "カジノ",
     },
     {
@@ -43,7 +47,7 @@
     },
     {
       name: "少林寺拳法同好会",
-      videoId: true,
+      videoId: "J6md62WwknE",
     },
     {
       name: "書道同好会",
@@ -97,7 +101,7 @@
     },
     {
       name: "物理研究部",
-      videoId: true,
+      videoId: "UGUFPIBs3rU",
     },
     {
       name: "フリースローチャレンジ",
