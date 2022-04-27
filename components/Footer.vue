@@ -12,7 +12,7 @@
       <a target="_blank" rel="noopener noreferrer" href="https://instagram.com/nada_schoolfestival">
         <img :class="$style.btn" src="~/assets/img/instagram.png" />
       </a>
-      <a target="_blank" rel="noopener noreferrer" href="https://lin.ee/bIbfdFl">
+      <a target="_blank" rel="noopener noreferrer" href="https://page.line.me/?accountId=jjb2343q">
         <img :class="$style.btn" src="~/assets/img/line.svg" />
       </a>
       <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/Nada_festival">
