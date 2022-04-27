@@ -7,7 +7,10 @@
         target="_blank" rel="noopener noreferrer"
         :href="article.data"
       >
-        <img v-if="article.cover" :src="require(`@/assets/img/cover/${article.cover}`)">
+        <img
+          v-if="article.cover"
+          :src="require(`@/assets/img/cover/${article.cover}?resize&size=600`)"
+        >
         <p v-if="!article.cover" :class="$style.alt">No<br>Image</p>
       </a>
       <p v-if="!article" :class="$style.alt">No<br>Article</p>

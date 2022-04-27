@@ -28,7 +28,7 @@
             class="player"
           >
             <img
-              :src="require(`@/assets/img/stage/ms/${player.img}`)"
+              :src="require(`@/assets/img/stage/ms/${player.img}?resize&size=800`)"
               alt="Ms.NADA出場者"
             />
             <h2>{{ "No." + Number(index + 1) + " " + player.name }}</h2>

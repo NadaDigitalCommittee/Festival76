@@ -28,7 +28,7 @@
             class="player"
           >
             <img
-              :src="require(`@/assets/img/stage/muscle/${player.img}`)"
+              :src="require(`@/assets/img/stage/muscle/${player.img}?resize&size=600`)"
               alt="筋肉王出場者"
             />
             <h2>{{ "No." + Number(index + 1) + " " + player.name }}</h2>

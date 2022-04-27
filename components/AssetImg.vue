@@ -1,5 +1,5 @@
 <template>
-  <img :src="require(`@/assets/img/blog/${src}`)" :alt="alt">
+  <img :src="require(`@/assets/img/blog/${src}?resize&size=600`)" :alt="alt">
 </template>
 
 <script lang='ts'>

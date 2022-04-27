@@ -64,7 +64,17 @@ export default {
   buildModules: [
     // TypeScript
     '@nuxt/typescript-build',
+    // 画像最適化
+    '@aceforth/nuxt-optimized-images',
   ],
+
+  optimizedImages: {
+    optimizeImages: true,
+    responsive: {
+      adapter: require('responsive-loader/sharp'),
+      size: 600,
+    },
+  },
 
   // 実行時に使うモジュール
   modules: [
