@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/", {data:[{}],fetch:{"News:0":{news:["ホームページを公開しました。"]}},mutations:void 0});
