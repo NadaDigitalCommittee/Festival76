@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <Title class="title">Ms.灘</Title>
+    <Title class="title">Ms.NADA</Title>
     <div class="content">
       <section>
         <h1 class="midashi">企画説明</h1>

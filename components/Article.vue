@@ -5,7 +5,7 @@
       <a
         v-if="article && typeof article.data === 'string'"
         target="_blank" rel="noopener noreferrer"
-        :href="`pdf/${article.data}`"
+        :href="article.data"
       >
         <img v-if="article.cover" :src="require(`@/assets/img/cover/${article.cover}`)">
         <p v-if="!article.cover" :class="$style.alt">No<br>Image</p>
