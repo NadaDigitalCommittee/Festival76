@@ -31,7 +31,7 @@
           >
             <img
               :src="require(`@/assets/img/stage/mr/${player.img}`)"
-              alt="Mr.灘出場者"
+              alt="Mr.NADA出場者"
             />
             <h2>{{ "No." + Number(index + 1) + " " + player.name }}</h2>
             <p class="desc">{{ player.desc }}</p>
@@ -52,7 +52,7 @@ export default Vue.extend({
   name: 'MrPage',
   head() {
     return {
-      title: 'Mr.灘',
+      title: 'Mr.NADA',
     };
   },
   data() {

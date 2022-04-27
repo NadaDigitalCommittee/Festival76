@@ -5,7 +5,7 @@
       <section>
         <h1 class="midashi">企画説明</h1>
         <p>
-          灘校一の美少女を決めるMs.灘コンテスト。魅力的な子たちがステージに集結します！あなたの推しを応援しよう！
+          灘校一の美少女を決めるMs.NADAコンテスト。魅力的な子たちがステージに集結します！あなたの推しを応援しよう！
         </p>
         <a href="#" class="votebutton" v-scroll-to="'#voteform'"
           >投票はこちら</a
@@ -29,7 +29,7 @@
           >
             <img
               :src="require(`@/assets/img/stage/ms/${player.img}`)"
-              alt="Ms.灘出場者"
+              alt="Ms.NADA出場者"
             />
             <h2>{{ "No." + Number(index + 1) + " " + player.name }}</h2>
             <p class="character">{{ player.character }}</p>
@@ -50,7 +50,7 @@ export default Vue.extend({
   name: 'MsPage',
   head() {
     return {
-      title: 'Ms.灘',
+      title: 'Ms.NADA',
     };
   },
   data() {
