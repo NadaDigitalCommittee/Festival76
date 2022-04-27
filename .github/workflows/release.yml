@@ -1,8 +1,10 @@
 # 公開用リポジトリにpushする
 name: Release
 
-# 手動実行
-on: [ workflow_dispatch ]
+on:
+  push:
+    branches
+      - release
 
 env:
   YARN_CACHE_FOLDER: .cache/yarn
