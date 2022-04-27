@@ -9,6 +9,7 @@
           <YouTube v-if="stage.videoId" :video-id="stage.videoId" :class="$style.video" />
           <p :class="$style.desc">{{ stage.description }}</p>
           <More v-if="stage.detail" :class="$style.more" :link="stage.detail" />
+          <div v-if="!stage.detail" :class="$style.space" />
         </div>
       </Accordion>
     </div>
@@ -96,12 +97,16 @@ export default Vue.extend({
 .desc {
   font-size: 0.75rem;
   font-weight: bold;
-  height: 3em;
+  min-height: 7.5em;
   margin-bottom: 1rem;
 }
 
 .more {
   align-self: flex-end;
   margin-top: auto;
+}
+
+.space {
+  height: 1.4rem;
 }
 </style>
