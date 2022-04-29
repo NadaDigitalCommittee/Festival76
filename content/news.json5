@@ -1,6 +1,10 @@
 {
   "news": [
       {
+        description: "ブログ記事「デザイン課長の中言」を公開しました。",
+        link: "/blog",
+      },
+      {
         description: "ブログ記事「委員長の小言」を公開しました。",
         link: "/blog",
       },
