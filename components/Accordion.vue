@@ -8,6 +8,7 @@
         />
         <h2 :class="$style.title">{{ title }}</h2>
       </div>
+      <img v-if="video && !wide" :class="$style.icon" src="@/assets/img/video.svg">
       <p v-if="place" :class="$style.place">{{ place }}</p>
     </div>
     <client-only>
@@ -41,6 +42,9 @@ export default Vue.extend({
     title: {
       type: String,
       required: true,
+    },
+    video: {
+      type: Boolean,
     },
     date: {
       type: Array,
@@ -137,8 +141,8 @@ export default Vue.extend({
 
 .head {
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+  /* justify-content: space-between; */
+  align-items: center;
   gap: 1rem;
   width: 100%;
   padding: 0.75rem 1rem 0.75rem 3rem;
@@ -172,6 +176,10 @@ export default Vue.extend({
 .title {
   font-weight: bold;
   color: $orange;
+}
+
+.icon {
+  height: 0.875rem;
 }
 
 .place {

@@ -2,7 +2,13 @@
   <div :class="$style.main">
     <Title :class="$style.title">クラブ・サークル</Title>
     <div :class="$style.list">
-      <Accordion v-for="club in clubs" :key="club.name" :title="club.name" :class="$style.item">
+      <Accordion
+        v-for="club in clubs"
+        :key="club.name"
+        :title="club.name"
+        :video="typeof club.videoId === 'string'"
+        :class="$style.item"
+      >
         <div :class="$style.content">
           <Article :article="club.article" :class="$style.article" />
           <YouTube :video-id="club.videoId" :class="$style.video" />
