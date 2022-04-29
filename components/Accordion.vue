@@ -12,7 +12,11 @@
     </div>
     <client-only>
       <transition name="date">
-        <p :class="$style.date" v-if="date && opened === 1">①{{ date[0] }} ②{{ date[1] }}</p>
+        <p :class="$style.date" v-if="date && opened === 1">
+          <span v-if="date[0]">①{{ date[0] }}</span>
+          <span v-if="date[0] && date[1]" :class="$style.space" />
+          <span v-if="date[1]">②{{ date[1] }}</span>
+        </p>
       </transition>
     </client-only>
     <client-only>
@@ -168,7 +172,6 @@ export default Vue.extend({
 
 .title {
   font-weight: bold;
-  font-size: 1rem;
   color: $orange;
 }
 
@@ -194,6 +197,11 @@ export default Vue.extend({
   @media screen and (min-width: 800px) {
     padding-left: 1rem;
   }
+}
+
+.space {
+  display: inline-block;
+  width: 0.8em;
 }
 
 .box {
