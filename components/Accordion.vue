@@ -8,7 +8,7 @@
         />
         <h2 :class="$style.title">{{ title }}</h2>
       </div>
-      <div :class="$style.icons">
+      <div v-if="video && !wide" :class="$style.icons">
         <img v-if="video && !wide" :class="$style.videoicon" src="@/assets/img/video.svg">
       </div>
       <p v-if="place" :class="$style.place">{{ place }}</p>
@@ -143,11 +143,10 @@ export default Vue.extend({
 
 .head {
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
   gap: 1rem;
   width: 100%;
-  padding: 0.75rem 1rem 0.75rem 3rem;
+  padding: 0 1rem 0 3rem;
 
   @media screen and (min-width: 800px) {
     padding-left: 1rem;
@@ -177,11 +176,18 @@ export default Vue.extend({
 
 .title {
   font-weight: bold;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
   color: $orange;
 }
 
+.icons {
+  display: flex;
+  align-items: center;
+}
+
 .videoicon {
-  width: 1.25rem;
+  height: 1rem;
 }
 
 .place {
