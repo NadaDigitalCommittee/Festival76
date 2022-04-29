@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/", {data:[{}],fetch:{"News:0":{news:["ブログ記事「委員長の小言」を公開しました。","ホームページを公開しました。"]}},mutations:void 0});
