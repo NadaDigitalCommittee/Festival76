@@ -2,7 +2,11 @@
   <div :class="$style.box">
     <p :class="$style.title">News</p>
     <div :class="$style.list">
-      <p v-for="(item, index) in (limited? news.slice(0, 3) : news)" :key=index>{{ item }}</p>
+      <div v-for="(item, index) in (limited? news.slice(0, 3) : news)" :key="index">
+        <nuxt-link :to="item.link">
+          <p>{{ item.description }}</p>
+        </nuxt-link>
+      </div>
     </div>
     <More v-if="limited && news.length > 3" link="/news" />
   </div>
@@ -67,14 +71,7 @@ export default Vue.extend({
   margin: 1rem;
   width: calc(100% - 2rem);
 
-  p {
-    font-size: 0.75rem;
-    font-weight: bold;
-    text-align: center;
-    width: 100%;
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
-
+  div {
     &::after {
       content: "";
       display: block;
@@ -83,12 +80,21 @@ export default Vue.extend({
       background-size: 10px 1px;
       background-position: left bottom;
       background-repeat: repeat-x;
-      transform: translateY(0.75rem);
     }
 
     &:last-child::after {
       content: none;
     }
+  }
+
+  p {
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+
   }
 }
 </style>

@@ -18,7 +18,7 @@ export default Vue.extend({
   name: 'YouTube',
   props: {
     videoId: {
-      type: String || Boolean,
+      type: [String, Boolean],
     },
   },
 });

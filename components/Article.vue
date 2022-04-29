@@ -30,7 +30,7 @@ export default Vue.extend({
         data: string | boolean;
         cover?: string;
       }>,
-      required: true,
+      /* required: true, */
     },
   },
 });

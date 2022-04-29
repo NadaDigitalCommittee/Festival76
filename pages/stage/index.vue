@@ -3,7 +3,12 @@
     <Title :class="$style.title">ステージ</Title>
     <div :class="$style.list">
       <Accordion
-        v-for="(stage, index) in stages" :key="index" :title="stage.name" :class="$style.item"
+        v-for="(stage, index) in stages"
+        :key="index"
+        :title="stage.name"
+        :place="stage.place"
+        :date="stage.date"
+        :class="$style.item"
       >
         <div :class="$style.content">
           <YouTube v-if="stage.videoId" :video-id="stage.videoId" :class="$style.video" />

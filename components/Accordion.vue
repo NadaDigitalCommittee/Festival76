@@ -8,7 +8,13 @@
         />
         <h2 :class="$style.title">{{ title }}</h2>
       </div>
+      <p v-if="place" :class="$style.place">{{ place }}</p>
     </div>
+    <client-only>
+      <transition name="date">
+        <p :class="$style.date" v-if="date && opened === 1">①{{ date[0] }} ②{{ date[1] }}</p>
+      </transition>
+    </client-only>
     <client-only>
       <slide-up-down :active="opened === 1" :duration="250">
         <div :class="[$style.box, $style.slider]">
@@ -33,20 +39,25 @@ export default Vue.extend({
       required: true,
     },
     date: {
-      type: String,
+      type: Array,
     },
-    desc: {
+    place: {
       type: String,
     },
   },
   data() {
     return {
       opened: -1,
+      wide: false,
     };
+  },
+  mounted() {
+    this.resize();
+    window.addEventListener('resize', this.resize);
   },
   methods: {
     toggle() {
-      if (!this.$slots.default) {
+      if (!this.$slots.default || this.wide) {
         return;
       }
       if (this.opened === 1) {
@@ -55,11 +66,33 @@ export default Vue.extend({
         this.opened = 1;
       }
     },
+    resize() {
+      const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+      if (vw >= 800) {
+        this.wide = true;
+        this.opened = 1;
+      } else {
+        this.opened = -1;
+        this.wide = false;
+      }
+    },
   },
 });
 </script>
 
 <style>
+.date-enter, .date-leave-to {
+  opacity: 0;
+}
+
+.date-enter-to, .date-leave {
+  opacity: 1;
+}
+
+.date-enter-active, .date-leave-active {
+  transition: opacity 250ms;
+}
+
 .close, .open {
   animation-duration: 250ms;
   animation-fill-mode: forwards;
@@ -135,8 +168,32 @@ export default Vue.extend({
 
 .title {
   font-weight: bold;
+  font-size: 1rem;
   color: $orange;
+}
 
+.place {
+  font-size: 0.625rem;
+  word-break: keep-all;
+  margin-left: auto;
+}
+
+.datebox {
+  width: 100%;
+}
+
+.date {
+  /* color: $gray; */
+  width: 100%;
+  font-size: 0.625rem;
+  text-align: left;
+  padding-left: 3rem;
+  padding-right: 1rem;
+  margin-top: -0.5rem;
+
+  @media screen and (min-width: 800px) {
+    padding-left: 1rem;
+  }
 }
 
 .box {
