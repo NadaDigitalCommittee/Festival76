@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@nuxt/content": "^1.15.1",
+    "@nuxtjs/sitemap": "^2.4.0",
     "@nuxtjs/style-resources": "^1.2.1",
     "core-js": "^3.22.2",
     "destyle.css": "^3.0.2",

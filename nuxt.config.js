@@ -21,7 +21,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: '第76回灘校文化祭「Turn it Over🔥」公式ウェブサイト' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [
@@ -82,7 +82,14 @@ export default {
     '@nuxt/content',
     // グローバルなSass変数とMixin
     '@nuxtjs/style-resources',
+    // サイトマップ生成
+    '@nuxtjs/sitemap',
   ],
+
+  sitemap: {
+    hostname: 'https://fest.nada-sc.jp/2022',
+    gzip: true,
+  },
 
   // Nuxt Contentの設定
   content: {
