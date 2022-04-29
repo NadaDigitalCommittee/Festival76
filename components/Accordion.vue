@@ -76,7 +76,6 @@ export default Vue.extend({
         this.wide = true;
         this.opened = 1;
       } else {
-        this.opened = -1;
         this.wide = false;
       }
     },
