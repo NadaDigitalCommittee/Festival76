@@ -7,6 +7,7 @@
         :key="club.name"
         :title="club.name"
         :video="typeof club.videoId === 'string'"
+        :article="typeof club.article === 'object'"
         :class="$style.item"
       >
         <div :class="$style.content">

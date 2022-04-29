@@ -8,7 +8,8 @@
         />
         <h2 :class="$style.title">{{ title }}</h2>
       </div>
-      <div v-if="video && !wide" :class="$style.icons">
+      <div v-if="(article || video) && !wide" :class="$style.icons">
+        <img v-if="article && !wide" :class="$style.articleicon" src="@/assets/img/article.svg">
         <img v-if="video && !wide" :class="$style.videoicon" src="@/assets/img/video.svg">
       </div>
       <p v-if="place" :class="$style.place">{{ place }}</p>
@@ -44,6 +45,9 @@ export default Vue.extend({
     title: {
       type: String,
       required: true,
+    },
+    article: {
+      type: Boolean,
     },
     video: {
       type: Boolean,
@@ -184,6 +188,11 @@ export default Vue.extend({
 .icons {
   display: flex;
   align-items: center;
+}
+
+.articleicon {
+  height: 1.4rem;
+  margin-right: 0.75rem;
 }
 
 .videoicon {
