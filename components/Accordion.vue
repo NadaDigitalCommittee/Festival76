@@ -8,7 +8,9 @@
         />
         <h2 :class="$style.title">{{ title }}</h2>
       </div>
-      <img v-if="video && !wide" :class="$style.icon" src="@/assets/img/video.svg">
+      <div :class="$style.icons">
+        <img v-if="video && !wide" :class="$style.videoicon" src="@/assets/img/video.svg">
+      </div>
       <p v-if="place" :class="$style.place">{{ place }}</p>
     </div>
     <client-only>
@@ -178,8 +180,8 @@ export default Vue.extend({
   color: $orange;
 }
 
-.icon {
-  height: 0.875rem;
+.videoicon {
+  width: 1.25rem;
 }
 
 .place {
