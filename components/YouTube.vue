@@ -3,7 +3,7 @@
     <p :class="$style.caption">動画</p>
     <div :class="$style.body">
       <a v-if="typeof videoId === 'string'" target="_blank" rel="noopener noreferrer" :href="`https://youtube.com/watch?v=${videoId}`">
-        <img :src="`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`">
+        <img :src="`https://img.youtube.com/vi/${videoId}/mqdefault.jpg`">
       </a>
       <p v-if="videoId && videoId === true" :class="$style.soon">Comming<br>soon...</p>
       <p v-if="!videoId" :class="$style.alt">No Video</p>
