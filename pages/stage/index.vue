@@ -105,6 +105,7 @@ export default Vue.extend({
   min-height: 7.5em;
   line-height: 1.4;
   margin-bottom: 1rem;
+  white-space: pre-wrap;
 }
 
 .more {
