@@ -1,6 +1,6 @@
 <template>
   <div :class="$style.main">
-    <Title :class="$style.title">今年度灘校グッズに関するお詫び</Title>
+    <Title :class="$style.title">【重要】今年度灘校グッズに関するお知らせとお詫び</Title>
     <Markdown :class="$style.text" :entry="content" />
   </div>
 </template>
@@ -12,7 +12,7 @@ export default Vue.extend({
   name: 'GoodsPage',
   head() {
     return {
-      title: '今年度灘校グッズに関するお詫び',
+      title: '今年度灘校グッズに関するお知らせとお詫び',
     };
   },
   data() {
