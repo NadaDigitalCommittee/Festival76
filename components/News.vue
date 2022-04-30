@@ -8,7 +8,7 @@
         </nuxt-link>
       </div>
     </div>
-    <More v-if="limited && news.length > 3" link="/news" />
+    <More :class="$style.more" v-if="limited && news.length > 3" link="/news" />
   </div>
 </template>
 
@@ -96,5 +96,10 @@ export default Vue.extend({
     padding-bottom: 0.75rem;
 
   }
+}
+
+.more {
+  margin-left: auto;
+  margin-bottom: 0.25rem;
 }
 </style>

@@ -1,6 +1,10 @@
 {
   "news": [
       {
+        description: "「今年度灘校グッズに関するお詫び」を掲載しました。",
+        link: "/goods",
+      },
+      {
         description: "ブログ記事「デザイン課長の中言」を公開しました。",
         link: "/blog",
       },
