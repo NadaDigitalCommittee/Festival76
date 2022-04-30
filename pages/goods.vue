@@ -45,7 +45,6 @@ export default Vue.extend({
 
 .text {
   width: 100%;
-  max-width: 20rem;
   margin-left: auto;
   margin-right: auto;
   padding: 0 1rem;
