@@ -29,6 +29,13 @@ export default {
       // Adobe Fonts (解約時に無効化されるので必要に応じて引き継ぐ)
       { rel: 'stylesheet', href: 'https://use.typekit.net/xlj6jqy.css' },
     ],
+    script: [
+      {
+        defer: true,
+        src: 'https://static.cloudflareinsights.com/beacon.min.js',
+        'data-cf-beacon': '{"token": "bfb321b351c6453f8e478e2e235de3d0"}',
+      },
+    ],
   },
 
   // 全てのページに適用するCSS
