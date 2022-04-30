@@ -40,7 +40,7 @@ export default Vue.extend({
 
 .title {
   width: 100%;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .text {
