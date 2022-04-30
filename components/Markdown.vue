@@ -16,72 +16,10 @@ export default Vue.extend({
 });
 </script>
 
-<style module lang="scss">
-.main {
-  background-color: $white;
-}
-
-.head {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 1rem;
-  width: 100%;
-  padding: 0.75rem 1rem 0.75rem 3rem;
-}
-
-.mark {
-  position: absolute;
-  top: calc(50% - 0.5rem - 2px);
-  left: -2rem;
-  height: 1em;
-  width: 1em;
-  border-bottom: 2px solid $orange;
-  border-right: 2px solid $orange;
-  transform-origin: 75% 75%;
-  transform: rotate(-45deg);
-}
-
-.catch {
-  position: relative;
-  font-size: 0.875rem;
-}
-
-.title {
-  font-weight: bold;
-  color: $orange;
-}
-
-.info {
-  flex-shrink: 2;
-  display: flex;
-  gap: 0 1.5rem;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  font-size: 0.625rem;
-  font-weight: 500;
-  word-break: keep-all;
-}
-
-.date {
-  color: $gray;
-  margin-left: auto;
-}
-
-.author {
-  margin-left: auto;
-}
-
-.box {
-  margin: 0.75rem 2rem 0.75rem 3rem;
-}
-</style>
-
 <style lang="scss">
 .nuxt-content {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
-  margin-left: -0.5rem;
   font-size: 0.75rem;
 
   p {
