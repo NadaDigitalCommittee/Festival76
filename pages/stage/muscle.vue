@@ -81,9 +81,14 @@ export default Vue.extend({
 </script>
 <style lang="scss" scoped>
 .main {
-  max-width: calc(25rem / 0.9);
-  margin-left: calc((100% - min(90%, 25rem / 0.9)) / 2);
-  margin-right: calc((100% - min(90%, 25rem / 0.9)) / 2);
+  width: 90%;
+  max-width: 25rem;
+  margin: 1rem auto 3rem;
+
+  @media screen and (min-width: 800px) {
+    width: 80%;
+    max-width: unset;
+  }
 }
 
 .title {
