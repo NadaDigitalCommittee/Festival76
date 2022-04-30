@@ -41,18 +41,27 @@
 
       <section>
         <h1 id="voteform" class="midashi">投票フォーム</h1>
+        <div class="form-wrapper">
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSdBre91SfvhioL9OB0fYjL0cvyhIE5Fi3YkBJVz0o3oX-MA9w/viewform?embedded=true"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+            >読み込んでいます…</iframe
+          >
+        </div>
       </section>
     </div>
   </div>
 </template>
 <script lang="ts">
-import Vue from 'vue';
+import Vue from "vue";
 
 export default Vue.extend({
-  name: 'MrPage',
+  name: "MrPage",
   head() {
     return {
-      title: 'Mr.NADA',
+      title: "Mr.NADA",
     };
   },
   data() {
@@ -61,7 +70,7 @@ export default Vue.extend({
     };
   },
   async fetch() {
-    const content = await this.$content('stage/mr').fetch();
+    const content = await this.$content("stage/mr").fetch();
 
     if (!content || Array.isArray(content)) {
       return;
@@ -141,6 +150,14 @@ export default Vue.extend({
     p.desc {
       font-weight: 500;
       text-align: justify;
+    }
+  }
+  .form-wrapper {
+    width: 101%;
+    overflow-x: hidden;
+    iframe {
+      width: 100%;
+      height: 145em;
     }
   }
 }

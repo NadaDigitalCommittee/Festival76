@@ -28,7 +28,9 @@
             class="player"
           >
             <img
-              :src="require(`@/assets/img/stage/ms/${player.img}?resize&size=800`)"
+              :src="
+                require(`@/assets/img/stage/ms/${player.img}?resize&size=800`)
+              "
               alt="Ms.NADA出場者"
             />
             <h2>{{ "No." + Number(index + 1) + " " + player.name }}</h2>
@@ -39,18 +41,28 @@
       </section>
       <section>
         <h1 id="voteform" class="midashi">投票フォーム</h1>
+        <div class="form-wrapper">
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSdQSg0Y43rC-207Gsddi3q2FoW_uDAD7K-OVnveLttB7QBgdA/viewform?embedded=true"
+            height="1781"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+            >読み込んでいます…</iframe
+          >
+        </div>
       </section>
     </div>
   </div>
 </template>
 <script lang="ts">
-import Vue from 'vue';
+import Vue from "vue";
 
 export default Vue.extend({
-  name: 'MsPage',
+  name: "MsPage",
   head() {
     return {
-      title: 'Ms.NADA',
+      title: "Ms.NADA",
     };
   },
   data() {
@@ -59,7 +71,7 @@ export default Vue.extend({
     };
   },
   async fetch() {
-    const content = await this.$content('stage/ms').fetch();
+    const content = await this.$content("stage/ms").fetch();
 
     if (!content || Array.isArray(content)) {
       return;
@@ -146,6 +158,16 @@ export default Vue.extend({
     p.desc {
       font-weight: 500;
       text-align: justify;
+    }
+  }
+
+  // 投票フォーム
+  .form-wrapper {
+    width: 101%;
+    overflow-x: hidden;
+    iframe {
+      width: 100%;
+      height: 175em
     }
   }
 }

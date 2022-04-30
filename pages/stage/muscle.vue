@@ -28,7 +28,9 @@
             class="player"
           >
             <img
-              :src="require(`@/assets/img/stage/muscle/${player.img}?resize&size=600`)"
+              :src="
+                require(`@/assets/img/stage/muscle/${player.img}?resize&size=600`)
+              "
               alt="筋肉王出場者"
             />
             <h2>{{ "No." + Number(index + 1) + " " + player.name }}</h2>
@@ -39,18 +41,27 @@
 
       <section>
         <h1 id="voteform" class="midashi">投票フォーム</h1>
+        <div class="form-wrapper">
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSfZCi_H3ucDwkRRxX_icXgdNCV_g5hkGJW0slPSfG5npk3PfQ/viewform?embedded=true"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+            >読み込んでいます…</iframe
+          >
+        </div>
       </section>
     </div>
   </div>
 </template>
 <script lang="ts">
-import Vue from 'vue';
+import Vue from "vue";
 
 export default Vue.extend({
-  name: 'MusclePage',
+  name: "MusclePage",
   head() {
     return {
-      title: '筋肉王',
+      title: "筋肉王",
     };
   },
   data() {
@@ -59,7 +70,7 @@ export default Vue.extend({
     };
   },
   async fetch() {
-    const content = await this.$content('stage/muscle').fetch();
+    const content = await this.$content("stage/muscle").fetch();
 
     if (!content || Array.isArray(content)) {
       return;
@@ -140,6 +151,15 @@ export default Vue.extend({
       font-weight: 500;
       text-align: justify;
       white-space: pre-wrap;
+    }
+  }
+  // 投票フォーム
+  .form-wrapper {
+    width: 101%;
+    overflow-x: hidden;
+    iframe {
+      width: 100%;
+      height: 100em;
     }
   }
 }
