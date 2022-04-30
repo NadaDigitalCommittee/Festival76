@@ -3,7 +3,7 @@ export default {
     return {
       meta: {
         title: null,
-        description: '第76回灘校文化祭「Turn it Over🔥」公式ウェブサイト。2022年5月2~3日開催。',
+        description: '2022年５月２～３日に開催される。第76回灘校文化祭「Turn it Over🔥」の公式ウェブサイトです。',
       },
     };
   },

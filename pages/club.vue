@@ -6,7 +6,7 @@
         <Accordion
           :title="club.name"
           :video="club.videos && typeof club.videos[0] === 'string'"
-          :article="club.articles && typeof club.articles[0] === 'string'"
+          :article="club.articles"
           :class="$style.accordion"
         >
           <div :class="$style.content">
@@ -88,10 +88,7 @@ type Club = {
   name: string;
   place: string;
   description: string;
-  articles?: {
-    cover?: string,
-    data: string;
-  }[];
+  articles?: string[];
   videos?: (string | boolean)[];
   popup?: boolean;
 };

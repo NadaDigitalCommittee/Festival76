@@ -1,18 +1,13 @@
 <template>
   <div :class="$style.body">
     <a
-      v-if="article && typeof article.data === 'string'"
+      v-if="article"
       target="_blank" rel="noopener noreferrer"
-      :href="article.data"
+      :href="`pdf/${article}.pdf`"
     >
-      <img
-        v-if="article.cover"
-        :src="require(`@/assets/img/cover/${article.cover}?resize&size=600`)"
-      >
-      <p v-if="!article.cover" :class="$style.alt">No<br>Image</p>
+      <img :src="require(`@/assets/img/cover/${article}.svg`)">
     </a>
     <p v-if="!article" :class="$style.alt">No<br>Article</p>
-    <p v-if="article && article.data === true" :class="$style.soon">Comming<br>soon...</p>
   </div>
 </template>
 
@@ -23,11 +18,7 @@ export default Vue.extend({
   name: 'Article',
   props: {
     article: {
-      type: Object as Vue.PropType<{
-        data: string | boolean;
-        cover?: string;
-      }>,
-      /* required: true, */
+      type: String,
     },
   },
 });
