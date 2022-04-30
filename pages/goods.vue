@@ -30,7 +30,7 @@ export default Vue.extend({
 .main {
   width: 90%;
   max-width: 25rem;
-  margin: 1rem auto 1rem;
+  margin: 1rem auto 3rem;
 
   @media screen and (min-width: 800px) {
     width: 80%;
