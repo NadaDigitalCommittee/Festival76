@@ -47,7 +47,7 @@ export default Vue.extend({
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 1rem;
+  padding: 1rem 1rem;
   background-color: $white;
 }
 
