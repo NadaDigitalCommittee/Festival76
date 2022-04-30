@@ -21,7 +21,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '第76回灘校文化祭「Turn it Over🔥」公式ウェブサイト' },
+      { hid: 'description', name: 'description', content: '第76回灘校文化祭「Turn it Over🔥」公式ウェブサイト。2022年5月2~3日開催です。' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [
@@ -87,7 +87,7 @@ export default {
   ],
 
   sitemap: {
-    hostname: 'https://fest.nada-sc.jp/2022',
+    hostname: 'https://fest.nada-sc.jp/',
     gzip: true,
   },
 

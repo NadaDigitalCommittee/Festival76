@@ -1,21 +1,18 @@
 <template>
-  <div>
-    <p :class="$style.caption">部誌</p>
-    <div :class="$style.body">
-      <a
-        v-if="article && typeof article.data === 'string'"
-        target="_blank" rel="noopener noreferrer"
-        :href="article.data"
+  <div :class="$style.body">
+    <a
+      v-if="article && typeof article.data === 'string'"
+      target="_blank" rel="noopener noreferrer"
+      :href="article.data"
+    >
+      <img
+        v-if="article.cover"
+        :src="require(`@/assets/img/cover/${article.cover}?resize&size=600`)"
       >
-        <img
-          v-if="article.cover"
-          :src="require(`@/assets/img/cover/${article.cover}?resize&size=600`)"
-        >
-        <p v-if="!article.cover" :class="$style.alt">No<br>Image</p>
-      </a>
-      <p v-if="!article" :class="$style.alt">No<br>Article</p>
-      <p v-if="article && article.data === true" :class="$style.soon">Comming<br>soon...</p>
-    </div>
+      <p v-if="!article.cover" :class="$style.alt">No<br>Image</p>
+    </a>
+    <p v-if="!article" :class="$style.alt">No<br>Article</p>
+    <p v-if="article && article.data === true" :class="$style.soon">Comming<br>soon...</p>
   </div>
 </template>
 
@@ -37,13 +34,6 @@ export default Vue.extend({
 </script>
 
 <style module lang="scss">
-.caption {
-  color: $orange;
-  font-weight: bold;
-  font-size: 0.5rem;
-  margin-bottom: 0.25rem;
-}
-
 .body {
   border: 1px solid $orange;
 

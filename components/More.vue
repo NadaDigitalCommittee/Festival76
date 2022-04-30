@@ -1,8 +1,14 @@
 <template>
-  <nuxt-link :to="link" :class="$style.more">
-    <p>MORE</p>
-    <span />
-  </nuxt-link>
+  <div>
+    <nuxt-link v-if="link" :to="link" :class="$style.more">
+      <p>MORE</p>
+      <span />
+    </nuxt-link>
+    <div v-if="!link" :class="$style.more">
+      <p>MORE</p>
+      <span />
+    </div>
+  </div>
 </template>
 
 <script lang='ts'>
@@ -13,7 +19,6 @@ export default Vue.extend({
   props: {
     link: {
       type: String,
-      required: true,
     },
   },
 });

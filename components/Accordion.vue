@@ -191,7 +191,7 @@ export default Vue.extend({
 }
 
 .articleicon {
-  height: 1.4rem;
+  height: 1.25rem;
   margin-right: 0.75rem;
 }
 
