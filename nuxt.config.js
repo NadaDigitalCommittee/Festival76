@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 let basedir = '/';
 if (process.env.DEPLOY_ENV === 'GH_PAGES') {
   basedir = '/Festival76/';
@@ -78,6 +79,7 @@ export default {
   optimizedImages: {
     optimizeImages: true,
     responsive: {
+      // eslint-disable-next-line import/no-extraneous-dependencies
       adapter: require('responsive-loader/sharp'),
       size: 600,
     },

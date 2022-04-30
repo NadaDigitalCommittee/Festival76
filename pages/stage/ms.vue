@@ -56,13 +56,13 @@
   </div>
 </template>
 <script lang="ts">
-import Vue from "vue";
+import Vue from 'vue';
 
 export default Vue.extend({
-  name: "MsPage",
+  name: 'MsPage',
   head() {
     return {
-      title: "Ms.NADA",
+      title: 'Ms.NADA',
     };
   },
   data() {
@@ -71,7 +71,7 @@ export default Vue.extend({
     };
   },
   async fetch() {
-    const content = await this.$content("stage/ms").fetch();
+    const content = await this.$content('stage/ms').fetch();
 
     if (!content || Array.isArray(content)) {
       return;
