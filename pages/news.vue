@@ -6,12 +6,18 @@
 
 <script lang="ts">
 import Vue from 'vue';
+// eslint-disable-next-line import/no-unresolved, import/extensions
+import Meta from '@/plugins/meta.js';
 
 export default Vue.extend({
   name: 'NewsPage',
-  head() {
+  mixins: [Meta],
+  data() {
     return {
-      title: 'ニュース',
+      meta: {
+        title: 'ニュース',
+        description: '第76回灘校文化祭「Turn it Over🔥」公式ウェブサイトのニュース一覧。',
+      },
     };
   },
 });

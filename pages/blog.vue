@@ -14,17 +14,19 @@
 
 <script lang="ts">
 import Vue from 'vue';
+// eslint-disable-next-line import/no-unresolved, import/extensions
+import Meta from '@/plugins/meta.js';
 
 export default Vue.extend({
   name: 'BlogPage',
-  head() {
-    return {
-      title: 'ブログ',
-    };
-  },
+  mixins: [Meta],
   data() {
     return {
       entries: [],
+      meta: {
+        title: 'ブログ',
+        description: '第76回灘校文化祭「Turn it Over🔥」公式ブログ。文化委員会の委員長と役員たちが勝手気ままに書きたいことを書きます。',
+      },
     };
   },
   async fetch() {

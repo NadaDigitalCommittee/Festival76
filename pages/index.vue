@@ -1,6 +1,6 @@
 <template>
   <div :class="$style.main">
-    <img :class="$style.top" src="~/assets/img/top.svg">
+    <img :class="$style.top" src="top.svg">
     <div :class="$style.card">
       <News :limited="true" :class="$style.news" />
     </div>
@@ -9,13 +9,18 @@
 
 <script lang="ts">
 import Vue from 'vue';
+// eslint-disable-next-line import/no-unresolved, import/extensions
+import Meta from '@/plugins/meta.js';
 
 export default Vue.extend({
   name: 'Index',
   layout: 'top',
-  head() {
+  mixins: [Meta],
+  data() {
     return {
-      title: 'トップページ',
+      meta: {
+        title: 'トップページ',
+      },
     };
   },
 });

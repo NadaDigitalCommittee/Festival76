@@ -56,17 +56,19 @@
 </template>
 <script lang="ts">
 import Vue from 'vue';
+// eslint-disable-next-line import/no-unresolved, import/extensions
+import Meta from '@/plugins/meta.js';
 
 export default Vue.extend({
   name: 'MusclePage',
-  head() {
-    return {
-      title: '筋肉王',
-    };
-  },
+  mixins: [Meta],
   data() {
     return {
       players: [],
+      meta: {
+        title: '筋肉王',
+        description: '灘校屈指の脳筋たちが集結！鍛え抜いた”美ボディ”を魅せつけます！パワーーーー！！',
+      },
     };
   },
   async fetch() {

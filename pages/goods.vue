@@ -7,17 +7,19 @@
 
 <script lang="ts">
 import Vue from 'vue';
+// eslint-disable-next-line import/no-unresolved, import/extensions
+import Meta from '@/plugins/meta.js';
 
 export default Vue.extend({
   name: 'GoodsPage',
-  head() {
-    return {
-      title: '【重要】今年度灘校グッズに関するお知らせとお詫び',
-    };
-  },
+  mixins: [Meta],
   data() {
     return {
       content: {},
+      meta: {
+        title: '【重要】今年度灘校グッズに関するお知らせとお詫び',
+        description: '本年度の灘校文化祭のグッズについて、お知らせとお詫びがございます。一部グッズについて、生徒への先行販売で売り切れとなり、当日に灘校にお越しいただいてもお買い求めいただけなくなってしまいました。申し訳ございません。 来年以降の再発防止のため善処いたします。',
+      },
     };
   },
   async fetch() {

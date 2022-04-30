@@ -15,14 +15,19 @@ export default {
 
   // HTMLのヘッダ
   head: {
-    titleTemplate: '%s | 第76回灘校文化祭「Turn it Over🔥」',
     htmlAttrs: {
       lang: 'ja',
+      prefix: 'og: http://ogp.me/ns#',
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '第76回灘校文化祭「Turn it Over🔥」公式ウェブサイト。2022年5月2~3日開催です。' },
+      { hid: 'og:site_name', name: 'og:site_name', content: '第76回灘校文化祭「Turn it Over🔥」公式ウェブサイト' },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
+      { hid: 'og:image', property: 'og:image', content: 'https://fest.nada-sc.jp/2022/top.svg' },
+      { hid: 'twitter:card', property: 'twitter:card', content: 'summary_large_image' },
+      { hid: 'twitter:site', property: 'twitter:site', content: '@Nada_festival' },
+      { hid: 'twitter:player', property: 'twitter:player', content: '@Nada_festival' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [

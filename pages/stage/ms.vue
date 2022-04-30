@@ -57,17 +57,19 @@
 </template>
 <script lang="ts">
 import Vue from 'vue';
+// eslint-disable-next-line import/no-unresolved, import/extensions
+import Meta from '@/plugins/meta.js';
 
 export default Vue.extend({
   name: 'MsPage',
-  head() {
-    return {
-      title: 'Ms.NADA',
-    };
-  },
+  mixins: [Meta],
   data() {
     return {
       players: [],
+      meta: {
+        title: 'Ms.NADA',
+        description: '灘校一の美少女を決めるMs.NADAコンテスト。魅力的な子たちがステージに集結します！あなたの推しを応援しよう！',
+      },
     };
   },
   async fetch() {

@@ -23,17 +23,19 @@
 
 <script lang="ts">
 import Vue from 'vue';
+// eslint-disable-next-line import/no-unresolved, import/extensions
+import Meta from '@/plugins/meta.js';
 
 export default Vue.extend({
   name: 'StagePage',
-  head() {
-    return {
-      title: 'ステージ',
-    };
-  },
+  mixins: [Meta],
   data() {
     return {
       stages: [],
+      meta: {
+        title: 'ステージ一覧',
+        description: '第76回灘校文化祭「Turn it Over🔥」ステージ企画の一覧。',
+      },
     };
   },
   async fetch() {

@@ -81,6 +81,8 @@
 
 <script lang="ts">
 import Vue from 'vue';
+// eslint-disable-next-line import/no-unresolved, import/extensions
+import Meta from '@/plugins/meta.js';
 
 type Club = {
   name: string;
@@ -96,13 +98,13 @@ type Club = {
 
 export default Vue.extend({
   name: 'ClubPage',
-  head() {
-    return {
-      title: 'クラブ・サークル',
-    };
-  },
-  data: (): { clubs: Club[]; } => ({
+  mixins: [Meta],
+  data: (): { clubs: Club[]; meta: object } => ({
     clubs: [],
+    meta: {
+      title: 'クラブ・サークル一覧',
+      description: '第76回灘校文化祭「Turn it Over🔥」に出展するクラブ・サークルの一覧です。部誌や動画も公開しています。',
+    },
   }),
   async fetch() {
     const content = await this.$content('clubs').only(['clubs']).fetch<Club>();

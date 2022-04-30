@@ -7,12 +7,16 @@
 
 <script lang="ts">
 import Vue from 'vue';
+// eslint-disable-next-line import/no-unresolved, import/extensions
+import Meta from '@/plugins/meta.js';
 
 export default Vue.extend({
   name: 'TicketPage',
+  mixins: [Meta],
   head() {
     return {
-      title: '整理券',
+      title: '整理券配布',
+      description: '第76回灘校文化祭「Turn it Over🔥」整理券配布・抽選ページ。',
     };
   },
 });

@@ -25,17 +25,19 @@
 
 <script lang="ts">
 import Vue from 'vue';
+// eslint-disable-next-line import/no-unresolved, import/extensions
+import Meta from '@/plugins/meta.js';
 
 export default Vue.extend({
   name: 'BandPage',
-  head() {
-    return {
-      title: '大講堂ステージ',
-    };
-  },
+  mixins: [Meta],
   data() {
     return {
       bands: [],
+      meta: {
+        title: '大講堂ステージ',
+        description: 'これぞ文化祭の花形！ライブ！ロックでかっこいい演奏からしっとりバラードまで、さまざまな演奏に触れられます。大講堂に足を運んでみませんか？',
+      },
     };
   },
   async fetch() {

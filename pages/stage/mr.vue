@@ -56,17 +56,19 @@
 </template>
 <script lang="ts">
 import Vue from 'vue';
+// eslint-disable-next-line import/no-unresolved, import/extensions
+import Meta from '@/plugins/meta.js';
 
 export default Vue.extend({
   name: 'MrPage',
-  head() {
-    return {
-      title: 'Mr.NADA',
-    };
-  },
+  mixins: [Meta],
   data() {
     return {
       players: [],
+      meta: {
+        title: 'Mr.NADA',
+        description: '灘校で最もかっこいいのは誰なのか。屈指のイケメンたちが集まったこのステージで、‘‘本物‘‘が決定する。',
+      },
     };
   },
   async fetch() {
