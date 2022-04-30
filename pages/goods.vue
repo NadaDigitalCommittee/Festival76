@@ -9,10 +9,10 @@
 import Vue from 'vue';
 
 export default Vue.extend({
-  name: 'TicketPage',
+  name: 'GoodsPage',
   head() {
     return {
-      title: '整理券',
+      title: '今年度灘校グッズに関するお詫び',
     };
   },
   data() {
