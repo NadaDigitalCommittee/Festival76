@@ -44,7 +44,7 @@ export default Vue.extend({
       this.result = '問い合わせ中…しばらくお待ちください。';
       if (Number.isSafeInteger(this.num)) {
         this.$axios({
-          url: '/api',
+          url: 'https://script.google.com/macros/s/AKfycbxf70eYzLUbT8hA3qLlWQq85q9-RvDUnV3WO0J8z4vvGWCSMEdXEuN8OPq4YaYkMgIfag/exec',
           params: {
             number: this.num,
           },
@@ -93,10 +93,10 @@ export default Vue.extend({
   min-width: 20rem;
   font-size: 1.5rem;
   padding: 0.25rem;
-  /* outline: ridge 2px $gray; */
   border-bottom: 1px solid $orange;
   margin: 0.75rem;
 }
+
 .button{
   font-size: 1.25rem;
   font-weight: bold;
