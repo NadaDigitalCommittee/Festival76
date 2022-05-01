@@ -1,0 +1,1 @@
+window.__NUXT__=(function(a){return {staticAssetsBase:"\u002FFestival76\u002F_nuxt\u002Fstatic\u002F1651444003",layout:"default",error:a,serverRendered:true,routePath:"\u002Fblog",config:{_app:{basePath:"\u002FFestival76\u002F",assetsPath:"\u002FFestival76\u002F_nuxt\u002F",cdnURL:a},content:{dbHash:"947e251b"}}}}(null));
