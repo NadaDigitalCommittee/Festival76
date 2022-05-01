@@ -98,6 +98,8 @@ export default {
     '@nuxtjs/style-resources',
     // サイトマップ生成
     '@nuxtjs/sitemap',
+
+    '@nuxtjs/axios',
   ],
 
   sitemap: {
@@ -117,4 +119,14 @@ export default {
 
   // ビルド設定
   // build: {},
+  
+  axios: {
+    proxy: true
+  },
+  proxy: {
+    '/api': {
+      target: 'https://script.google.com/macros/s/AKfycbxf70eYzLUbT8hA3qLlWQq85q9-RvDUnV3WO0J8z4vvGWCSMEdXEuN8OPq4YaYkMgIfag/exec',
+      pathRewrite: { '^/api': '' }
+    }
+  },
 };
