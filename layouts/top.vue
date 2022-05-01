@@ -83,16 +83,16 @@ export default Vue.extend({
 .background {
   position: absolute;
   z-index: -1;
-  top: 42rem;
+  top: 40rem;
   left: 0;
   width: 100%;
   height: 175vw;
 
   @media screen and (min-width: 800px) {
     width: 80%;
-    top: calc(24rem + (100vw - (min(25rem, 45vw) + 5vw)) * 0.675);
+    top: calc(12rem + 65vw);
     left: 10%;
-    height: 70vw;
+    height: 140vw;
   }
 }
 
@@ -102,10 +102,10 @@ export default Vue.extend({
     display: inherit;
     position: absolute;
     z-index: -1;
-    width: calc((100% - (min(25rem, 45%) + 5%)) * 0.85);
-    top: 23rem;
-    left: calc((100% - (min(25rem, 45%) + 5%)) * 0.075);
-    height: calc((100vw - (min(25rem, 45vw) + 5vw)) * 0.675);
+    width: 80%;
+    top: 12rem;
+    left: 10%;
+    height: 60vw;
   }
 }
 
