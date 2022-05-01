@@ -7,11 +7,11 @@
       <p>整理券に番号がない場合は、先着順のイベントですので開催時刻通りにイベント会場にお越しください。</p>
       <input :class="$style.idk" type="number" v-model.number= "num" placeholder="整理券番号を入力">
       <button v-on:click="check" :class="$style.button">確認</button>
-      <p>{{ result }}</p>
+      <p :class="$style.result">{{ result }}</p>
       <p>整理券についての情報は下のPDFを御覧ください。</p>
       <div :class="$style.pdf">
-        <a href="/pdf/整理券配布スケジュール.pdf">整理券配布スケジュール</a>
-        <a href="/pdf/整理券諸注意.pdf">整理券諸注意</a>
+        <a href="pdf/整理券配布スケジュール.pdf">整理券配布スケジュール</a>
+        <a href="pdf/整理券諸注意.pdf">整理券諸注意</a>
       </div>
     </div>
   </div>
@@ -19,7 +19,6 @@
 
 <script lang="ts">
 import Vue from 'vue';
-
 // eslint-disable-next-line import/no-unresolved, import/extensions
 import Meta from '@/plugins/meta.js';
 
@@ -83,41 +82,39 @@ export default Vue.extend({
   margin-bottom: 2rem;
 }
 
-.soon {
-  width: 80%;
-  max-width: 20rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 4rem 1rem;
-  font-size: 2rem;
-  /* font-weight: bold; */
-  color: $orange;
-  font-family: futura-pt, sans-serif;
-  text-align: center;
-  background-color: $white;
-}
-
 .form{
   background-color: $white;
   text-align: center;
   margin-bottom: min(50px,5vh);
 }
-.button{
-  outline-style:ridge;
-  outline-width: 2px;
-  outline-color: $gray;
-}
 
 .idk{
-  width: min(400px,100%);
-  font-size: x-large;
-  outline: ridge 2px $gray;
-  margin-bottom: 10px;
+  width: 70%;
+  min-width: 20rem;
+  font-size: 1.5rem;
+  padding: 0.25rem;
+  /* outline: ridge 2px $gray; */
+  border-bottom: 1px solid $orange;
+  margin: 0.75rem;
 }
 .button{
-  font-size: x-large;
-  margin-bottom: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0.5rem;
+  color: $white;
+  background-color: $orange;
+  margin: 0.75rem;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
 }
+
+.result {
+  font-size: 1.25rem;
+  color: $orange;
+  margin: 1rem;
+}
+
 .title2 {
   width: 100%;
   font-size: 1.4rem;
@@ -125,12 +122,11 @@ export default Vue.extend({
   background-color: $white;
   color: $orange;
   padding: 0.75rem;
-  margin-bottom: 1rem;
 }
 .pdf{
-  padding: 10px;
+  padding: 1rem;
   display: flex;
-  gap:10px;
+  gap: 1rem;
   justify-content: center;
   @media screen and (max-width : 400px) {
     flex-direction: column;
@@ -139,6 +135,7 @@ export default Vue.extend({
     flex-direction: row;
   }
   a{
+    color: $orange;
     text-decoration: underline;
   }
 }
