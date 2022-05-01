@@ -193,8 +193,9 @@ export default Vue.extend({
 }
 
 .more {
-  margin-top: 1rem;
   padding: 0.25rem;
+  margin-top: 1.75rem;
+  margin-right: 0.5rem;
   margin-left: auto;
 }
 
