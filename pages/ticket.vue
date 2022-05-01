@@ -98,7 +98,7 @@ export default Vue.extend({
   margin: 0.75rem;
 }
 .button{
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: bold;
   padding: 0.5rem;
   color: $white;
