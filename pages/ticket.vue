@@ -19,9 +19,12 @@
 
 <script lang="ts">
 import Vue from 'vue';
+
 // eslint-disable-next-line import/no-unresolved, import/extensions
 import Meta from '@/plugins/meta.js';
- const jsonpAdapter = require('axios-jsonp');
+
+const jsonpAdapter = require('axios-jsonp');
+
 export default Vue.extend({
   name: 'TicketPage',
   mixins: [Meta],
@@ -31,36 +34,35 @@ export default Vue.extend({
       description: '第76回灘校文化祭「Turn it Over🔥」整理券配布・抽選ページ。',
     };
   },
-  data(){
-    return{
+  data() {
+    return {
       num: '',
       result: '検索結果がここに表示されます',
-    }
+    };
   },
-  methods:{
-    check: function(e:any){
-      this.result = '問い合わせ中…しばらくお待ちください。'
-      var value,index;
-      if(Number.isSafeInteger(this.num)){
-      this.$axios({
-        url: `/api`,
-        params:{
-          number: this.num,
-        },
-        adapter: jsonpAdapter,
-      })
-        .then((response) => {
-          if(response.data.index>=0){
-            this.result = '整理券' + this.num +'番は当選しています。整理券に書かれた時刻通りにイベント会場にお越しください。';
-          }else{
-            this.result = '整理券' + this.num +'番は当選していないか、まだ抽選が行われていません。';
-          }
-        });
-      }else{
-        this.result = '整数のみを入力してください'
+  methods: {
+    check() {
+      this.result = '問い合わせ中…しばらくお待ちください。';
+      if (Number.isSafeInteger(this.num)) {
+        this.$axios({
+          url: '/api',
+          params: {
+            number: this.num,
+          },
+          adapter: jsonpAdapter,
+        })
+          .then((response) => {
+            if (response.data.index >= 0) {
+              this.result = `整理券${this.num}番は当選しています。整理券に書かれた時刻通りにイベント会場にお越しください。`;
+            } else {
+              this.result = `整理券${this.num}番は当選していないか、まだ抽選が行われていません。`;
+            }
+          });
+      } else {
+        this.result = '整数のみを入力してください';
       }
-    }
-  }
+    },
+  },
 });
 </script>
 
@@ -129,14 +131,12 @@ export default Vue.extend({
   padding: 10px;
   display: flex;
   gap:10px;
-  
-    justify-content: center;
+  justify-content: center;
   @media screen and (max-width : 400px) {
     flex-direction: column;
   }
   @media screen and (min-width : 401px) {
     flex-direction: row;
-    
   }
   a{
     text-decoration: underline;

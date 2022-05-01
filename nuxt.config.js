@@ -119,14 +119,14 @@ export default {
 
   // ビルド設定
   // build: {},
-  
+  //api
   axios: {
-    proxy: true
+    proxy: true,
   },
   proxy: {
     '/api': {
       target: 'https://script.google.com/macros/s/AKfycbxf70eYzLUbT8hA3qLlWQq85q9-RvDUnV3WO0J8z4vvGWCSMEdXEuN8OPq4YaYkMgIfag/exec',
-      pathRewrite: { '^/api': '' }
-    }
+      pathRewrite: { '^/api': '' },
+    },
   },
 };
