@@ -119,7 +119,7 @@ export default {
 
   // ビルド設定
   // build: {},
-  //api
+  // api
   axios: {
     proxy: true,
   },
