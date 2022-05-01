@@ -5,7 +5,7 @@
       <h1 :class="$style.title2">抽選確認システム</h1>
       <p>整理券に番号がある場合、下のフォームに整理券番号を入力し当選確認が出来ます。</p>
       <p>整理券に番号がない場合は、先着順のイベントですので開催時刻通りにイベント会場にお越しください。</p>
-      <input :class="$style.idk" type="number" v-model.number= "num" placeholder="整理券番号を入力">
+      <input :class="$style.idk" type="number" v-model.number= "num" placeholder="整理券番号">
       <button v-on:click="check" :class="$style.button">確認</button>
       <p :class="$style.result">{{ result }}</p>
       <p>整理券についての情報は下のPDFを御覧ください。</p>
@@ -85,12 +85,13 @@ export default Vue.extend({
 .form{
   background-color: $white;
   text-align: center;
+  padding: 0.75rem;
   margin-bottom: min(50px,5vh);
 }
 
 .idk{
-  width: 70%;
-  min-width: 20rem;
+  width: 50%;
+  min-width: 10rem;
   font-size: 1.5rem;
   padding: 0.25rem;
   border-bottom: 1px solid $orange;
@@ -121,7 +122,7 @@ export default Vue.extend({
   font-weight: bold;
   background-color: $white;
   color: $orange;
-  padding: 0.75rem;
+  margin-bottom: 0.75rem;
 }
 .pdf{
   padding: 1rem;
