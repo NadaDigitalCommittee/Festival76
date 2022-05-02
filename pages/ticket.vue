@@ -42,7 +42,7 @@ export default Vue.extend({
   methods: {
     check() {
       this.result = '問い合わせ中…しばらくお待ちください。';
-      if (Number.isSafeInteger(this.num) && (parseInt(this.num)>=0)) {
+      if (Number.isSafeInteger(this.num) && (parseInt(this.num ,10) >= 0)) {
         this.$axios({
           url: 'https://script.google.com/macros/s/AKfycbxf70eYzLUbT8hA3qLlWQq85q9-RvDUnV3WO0J8z4vvGWCSMEdXEuN8OPq4YaYkMgIfag/exec',
           params: {
