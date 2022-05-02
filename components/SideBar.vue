@@ -14,7 +14,7 @@
       <div :class="$style.bar" />
       <a
         target="_blank" rel="noopener noreferrer"
-        href="https://drive.google.com/drive/folders/1UCJpEjHDzvZ7bE6ga_zwGJA71-FYbDqt?usp=sharing"
+        href="https://drive.google.com/file/d/1pCWol9hTgDczJtNcwt3o2pP4tknoWVSU/view?usp=sharing"
         :class="$style.btn"
       >
         パンフレット
