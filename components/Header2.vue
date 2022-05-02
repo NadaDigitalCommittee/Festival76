@@ -3,7 +3,7 @@
     <div :class="$style.sub">
       <nuxt-link to="/club" :class="$style.linkbtn">サークル</nuxt-link>
       <nuxt-link to="/stage" :class="$style.linkbtn">ステージ</nuxt-link>
-      <nuxt-link to="/blog" :class="$style.linkbtn">ブログ</nuxt-link>
+      <nuxt-link to="/ticket" :class="$style.linkbtn">整理券</nuxt-link>
     </div>
   </div>
 </template>
