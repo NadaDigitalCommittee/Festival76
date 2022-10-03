@@ -14,7 +14,7 @@
     "@nuxtjs/sitemap": "^2.4.0",
     "@nuxtjs/style-resources": "^1.2.1",
     "axios-jsonp": "^1.0.4",
-    "core-js": "^3.22.2",
+    "core-js": "^3.25.4",
     "destyle.css": "^3.0.2",
     "nuxt": "^2.15.8",
     "vue": "^2.6.14",
